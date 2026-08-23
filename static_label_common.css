@@ -1,0 +1,242 @@
+:root {
+  --accent: #2d6f8b;
+  --accent-soft: #eef5f8;
+  --ink: #111;
+  --line: #222;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #d8dcda;
+  color: var(--ink);
+  font-family: SimSun, "Songti SC", "Microsoft YaHei", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  padding: 18px;
+}
+
+.sheet {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 6mm 7.5mm 5mm;
+  background: #fff;
+  border: 1px solid #c9cfcc;
+  box-shadow: 0 10px 34px rgba(21, 35, 28, .18);
+  overflow: hidden;
+}
+
+.study-note {
+  margin-bottom: 2mm;
+  padding-bottom: 1.4mm;
+  border-bottom: 1px solid #777;
+  color: #555;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 7.6pt;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: .02em;
+}
+
+.identity {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4mm;
+  align-items: center;
+  padding: 2mm 3mm 2.2mm;
+  border: 1.4px solid var(--accent);
+  border-top: 5mm solid var(--accent);
+}
+
+.identity-main { text-align: center; }
+
+.identity h1 {
+  margin: 0;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 20pt;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.identity .composition {
+  margin-top: 1.4mm;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 10pt;
+  line-height: 1.45;
+}
+
+.toxicity {
+  min-width: 19mm;
+  padding-left: 4mm;
+  border-left: 1px solid #777;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 9.6pt;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.toxicity span {
+  display: block;
+  font-size: 7.6pt;
+  color: #555;
+}
+
+.main {
+  font-size: 10.4pt;
+  line-height: 1.5;
+}
+
+.section { margin-top: 2.6mm; }
+
+.section-title {
+  display: inline-block;
+  margin: 0 0 1mm;
+  padding: .7mm 2.2mm .65mm;
+  color: #fff;
+  background: var(--accent);
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 10.4pt;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p { margin: 0; text-align: justify; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 9.8pt;
+  text-align: center;
+}
+
+th, td {
+  border: 1px solid var(--line);
+  padding: 1.9mm 1mm;
+  vertical-align: middle;
+}
+
+th {
+  color: #fff;
+  background: var(--accent);
+  font-weight: 700;
+}
+
+ol {
+  margin: 0;
+  padding-left: 5.3mm;
+}
+
+li { padding-left: .4mm; }
+li + li { margin-top: .25mm; }
+
+.compact-columns {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 3.5mm;
+  align-items: start;
+}
+
+.records {
+  display: grid;
+  grid-template-columns: 1fr 27mm;
+  gap: 3mm;
+  align-items: end;
+  margin-top: 2mm;
+  padding-top: 1.8mm;
+  border-top: 1px solid #555;
+}
+
+.record-text {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 8.2pt;
+  line-height: 1.5;
+}
+
+.record-text b { font-weight: 700; }
+
+.qr-wrap { text-align: center; }
+
+.qr {
+  width: 23mm;
+  height: 23mm;
+  margin: 0 auto;
+  border: 1mm solid #fff;
+  outline: 1px solid #222;
+  background:
+    linear-gradient(90deg, transparent 50%, #111 50%) 0 0 / 3.2mm 3.2mm,
+    linear-gradient(0deg, transparent 50%, #111 50%) 0 0 / 2.4mm 2.4mm,
+    repeating-conic-gradient(#111 0 25%, #fff 0 50%) 0 0 / 4mm 4mm;
+  position: relative;
+}
+
+.qr::before,
+.qr::after {
+  content: "";
+  position: absolute;
+  width: 6mm;
+  height: 6mm;
+  border: 1.5mm solid #111;
+  background: #fff;
+}
+
+.qr::before { left: 1.2mm; top: 1.2mm; }
+.qr::after { right: 1.2mm; bottom: 1.2mm; }
+
+.qr-label {
+  margin-top: 1mm;
+  color: #444;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 6.7pt;
+}
+
+.pictograms {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 2mm;
+  border: 1px solid #111;
+}
+
+.pictograms span {
+  min-height: 12mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .8mm .5mm;
+  border-right: 1px solid #111;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 7.3pt;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.pictograms span:last-child { border-right: 0; }
+
+.category-band {
+  margin-top: 1mm;
+  padding: 1.8mm 3mm;
+  color: #fff;
+  background: #111;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 11pt;
+  font-weight: 700;
+  letter-spacing: .8em;
+  text-align: center;
+  text-indent: .8em;
+}
+
+@page { size: A4 portrait; margin: 0; }
+
+@media print {
+  html, body { background: #fff; }
+  body { padding: 0; }
+  .sheet { border: 0; box-shadow: none; }
+}
