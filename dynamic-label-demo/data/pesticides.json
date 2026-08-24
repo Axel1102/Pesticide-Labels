@@ -1,0 +1,161 @@
+{
+  "datasetVersion": "1.0.0",
+  "experimentalUseOnly": true,
+  "disclaimer": "所有产品、成分、登记信息、剂量和混配信息均为虚构，仅用于标签实验，禁止用于真实农业生产。",
+  "equipment": {
+    "name": "背负式喷雾器",
+    "capacityLiters": 15
+  },
+  "products": [
+    {
+      "id": "product-a",
+      "code": "A",
+      "shortName": "玉米除草剂",
+      "productName": "24% 玉净酮·禾封嗪悬浮剂",
+      "type": "除草剂",
+      "accent": "#2c708d",
+      "activeIngredients": [
+        { "name": "玉净酮", "percentage": 10 },
+        { "name": "禾封嗪", "percentage": 14 }
+      ],
+      "formulation": "悬浮剂",
+      "toxicity": "低毒（实验模拟分级）",
+      "crop": "玉米",
+      "target": "一年生禾本科杂草",
+      "distractorTargets": ["小麦田杂草", "玉米螟"],
+      "applicationTiming": {
+        "recommended": "玉米3-5叶期、杂草2-4叶期",
+        "options": ["玉米3-5叶期、杂草2-4叶期", "玉米6叶期及以后", "小麦生长期"]
+      },
+      "dosage": {
+        "standardLabel": "稀释200倍液",
+        "dilutionFactor": 200,
+        "tankLiters": 15,
+        "amountMl": 75,
+        "applicationMethod": "对杂草茎叶均匀喷雾，避开玉米心叶"
+      },
+      "limits": {
+        "maxUsesPerSeason": 1,
+        "minimumIntervalDays": null,
+        "safetyIntervalDays": null,
+        "hardBoundary": "玉米5叶期后不得使用"
+      },
+      "mixing": {
+        "restrictedCategory": "有机磷类杀虫剂",
+        "plainExplanation": "一类常见杀虫药剂，本品标签明确禁止与其混用。",
+        "restrictedExamples": ["辛硫磷", "敌敌畏"],
+        "notExplicitlyRestrictedExamples": ["含铜制剂", "生物杀菌剂"]
+      },
+      "problemGuidance": {
+        "trigger": "杂草较多或效果不均",
+        "do": ["确认玉米和杂草是否仍在标签叶期", "检查喷雾覆盖是否均匀、是否发生药液漂移", "采用人工处理或咨询其他允许方式"],
+        "doNot": ["不要自行加浓", "不要在本季再次使用本品"]
+      },
+      "fullLabel": {
+        "performance": "选择性苗后除草剂，药剂经杂草茎叶吸收后抑制其生长。",
+        "technicalRequirements": ["于推荐叶期施药", "每季最多使用1次", "大风天或预计1小时内降雨时请勿施药"],
+        "precautions": ["不得用于小麦田", "避免漂移至邻近敏感作物", "做好个人防护并避免污染水体"]
+      }
+    },
+    {
+      "id": "product-b",
+      "code": "B",
+      "shortName": "小麦杀菌剂",
+      "productName": "25% 麦序霉素·穗护酮悬浮剂",
+      "type": "杀菌剂",
+      "accent": "#377748",
+      "activeIngredients": [
+        { "name": "麦序霉素", "percentage": 15 },
+        { "name": "穗护酮", "percentage": 10 }
+      ],
+      "formulation": "悬浮剂",
+      "toxicity": "低毒（实验模拟分级）",
+      "crop": "小麦",
+      "target": "白粉病",
+      "distractorTargets": ["小麦条锈病", "玉米螟"],
+      "applicationTiming": {
+        "recommended": "发病前或发病初期",
+        "options": ["发病前或发病初期", "病害严重后期", "小麦收获前10天"]
+      },
+      "dosage": {
+        "standardLabel": "稀释300倍液",
+        "dilutionFactor": 300,
+        "tankLiters": 15,
+        "amountMl": 50,
+        "applicationMethod": "对小麦茎、叶均匀周到喷雾"
+      },
+      "limits": {
+        "maxUsesPerSeason": 2,
+        "minimumIntervalDays": 7,
+        "safetyIntervalDays": 20,
+        "hardBoundary": "本季已使用2次时不得继续使用"
+      },
+      "mixing": {
+        "restrictedCategory": "含铜制剂",
+        "plainExplanation": "含铜成分、用于农业防治的药剂，本品标签明确禁止与其混用。",
+        "restrictedExamples": ["波尔多液", "氢氧化铜制剂"],
+        "notExplicitlyRestrictedExamples": ["辛硫磷", "矿物油助剂"]
+      },
+      "problemGuidance": {
+        "trigger": "上一次药效明显下降",
+        "do": ["检查本季已经使用的次数", "检查是否连续重复使用同一类杀菌剂", "轮换作用方式不同且标签允许的药剂，或咨询专业人员"],
+        "doNot": ["不要自行加浓", "不要超过本季最大使用次数"]
+      },
+      "fullLabel": {
+        "performance": "内吸性杀菌剂，具有预防和治疗作用，可用于防治小麦白粉病。",
+        "technicalRequirements": ["于发病前或发病初期施药", "间隔7-10天施药1次", "每季最多使用2次，安全间隔期20天"],
+        "precautions": ["不能与含铜制剂混用", "蜜源作物花期及水体附近禁用", "做好个人防护并避免污染水体"]
+      }
+    },
+    {
+      "id": "product-c",
+      "code": "C",
+      "shortName": "玉米杀虫剂",
+      "productName": "16% 穗巡酰胺·苗护菊酯悬浮剂",
+      "type": "杀虫剂",
+      "accent": "#8b5a2b",
+      "activeIngredients": [
+        { "name": "穗巡酰胺", "percentage": 10 },
+        { "name": "苗护菊酯", "percentage": 6 }
+      ],
+      "formulation": "悬浮剂",
+      "toxicity": "低毒（实验模拟分级）",
+      "crop": "玉米",
+      "target": "玉米螟",
+      "distractorTargets": ["玉米蚜虫", "一年生禾本科杂草"],
+      "applicationTiming": {
+        "recommended": "卵孵化盛期至低龄幼虫期",
+        "options": ["卵孵化盛期至低龄幼虫期", "高龄幼虫大量钻蛀后", "玉米收获前7天"]
+      },
+      "dosage": {
+        "standardLabel": "稀释250倍液",
+        "dilutionFactor": 250,
+        "tankLiters": 15,
+        "amountMl": 60,
+        "applicationMethod": "重点喷施玉米心叶和受害部位"
+      },
+      "limits": {
+        "maxUsesPerSeason": 3,
+        "minimumIntervalDays": 7,
+        "safetyIntervalDays": 14,
+        "hardBoundary": "本季已使用3次时不得继续使用"
+      },
+      "mixing": {
+        "restrictedCategory": "碱性药剂",
+        "plainExplanation": "呈碱性、用于农业防治的药剂，本品标签明确禁止与其混用。",
+        "restrictedExamples": ["石硫合剂", "波尔多液"],
+        "notExplicitlyRestrictedExamples": ["生物杀菌剂", "含铜制剂"]
+      },
+      "problemGuidance": {
+        "trigger": "上一次防治效果明显下降",
+        "do": ["检查本季已经使用的次数", "检查幼虫是否已超过低龄期、心叶覆盖是否充分", "轮换作用方式不同且标签允许的杀虫剂，或咨询专业人员"],
+        "doNot": ["不要自行加浓", "不要超过本季最大使用次数"]
+      },
+      "fullLabel": {
+        "performance": "具有触杀和胃毒作用的杀虫剂，可用于防治玉米螟低龄幼虫。",
+        "technicalRequirements": ["于卵孵化盛期至低龄幼虫期施药", "间隔7-10天施药1次", "每季最多使用3次，安全间隔期14天"],
+        "precautions": ["不能与碱性药剂混用", "蜜源作物花期、桑园及水体附近禁用", "做好个人防护并避免污染水体"]
+      }
+    }
+  ]
+}

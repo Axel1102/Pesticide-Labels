@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>三款产品原始静态与增强静态标签总览</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin:0; min-height:100%; }
+    body { background:#e4e7e4; color:#171714; font-family:"Microsoft YaHei","PingFang SC",sans-serif; }
+    .board { width:1800px; min-height:2400px; margin:0 auto; padding:42px 54px; background:linear-gradient(180deg,#f8f7f3,#e7eae6); }
+    header { text-align:center; margin-bottom:26px; }
+    h1 { margin:0; font-size:38px; }
+    header p { margin:10px 0 0; color:#625e57; font-size:18px; }
+    .columns { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin:0 0 14px 220px; color:#5d5952; font-size:20px; font-weight:700; text-align:center; }
+    .row { display:grid; grid-template-columns:190px 1fr 1fr; gap:28px; align-items:stretch; margin-bottom:26px; padding:22px; border-radius:18px; background:rgba(255,255,255,.92); box-shadow:0 13px 30px rgba(22,30,24,.09); }
+    .product { display:flex; flex-direction:column; justify-content:center; padding:20px; border-radius:14px; color:#fff; }
+    .product.a { background:#2c708d; }.product.b { background:#377748; }.product.c { background:#8b5a2b; }
+    .product .code { font-size:20px; opacity:.8; }.product h2 { margin:9px 0 6px; font-size:30px; }.product p { margin:0; font-size:17px; line-height:1.55; }
+    .preview { display:block; width:100%; height:650px; object-fit:contain; object-position:center top; border:1px solid #d5d8d3; background:#d8dcda; }
+    footer { padding:16px; color:#666159; font-size:15px; text-align:center; }
+  </style>
+</head>
+<body>
+  <main class="board">
+    <header><h1>三款农药标签 · 原始静态 vs 增强静态</h1><p>主要作物限定为玉米和小麦；三种作用类型分别为除草剂、杀菌剂、杀虫剂</p></header>
+    <div class="columns"><span>原始静态 · Baseline</span><span>增强静态 · Information Enhancement</span></div>
+    <section class="row"><div class="product a"><span class="code">PRODUCT A</span><h2>玉米除草剂</h2><p>一年生禾本科杂草<br>15 L＝75 mL</p></div><img class="preview" src="static_label_product_a_render.png" alt="A原始静态"><img class="preview" src="enhanced_static_label_product_a_render.png" alt="A增强静态"></section>
+    <section class="row"><div class="product b"><span class="code">PRODUCT B</span><h2>小麦杀菌剂</h2><p>白粉病<br>15 L＝50 mL</p></div><img class="preview" src="static_label_product_b_render.png" alt="B原始静态"><img class="preview" src="enhanced_static_label_product_b_render.png" alt="B增强静态"></section>
+    <section class="row"><div class="product c"><span class="code">PRODUCT C</span><h2>玉米杀虫剂</h2><p>玉米螟<br>15 L＝60 mL</p></div><img class="preview" src="static_label_product_c_render.png" alt="C原始静态"><img class="preview" src="enhanced_static_label_product_c_render.png" alt="C增强静态"></section>
+    <footer>实验用虚构农药标签 · 所有产品、成分、登记信息与剂量均为虚构 · 禁止用于真实农业生产</footer>
+  </main>
+</body>
+</html>
