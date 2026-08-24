@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>农药标签实验卡片</title>
+  <style>
+    :root { --ink:#171916; --muted:#656a62; --line:#bfc5bc; --paper:#fff; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; padding:0; color:var(--ink); background:#ecefeb; font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; }
+    .page { width:210mm; min-height:297mm; margin:0 auto 8mm; padding:10mm; background:var(--paper); page-break-after:always; position:relative; overflow:hidden; }
+    .page:last-child { page-break-after:auto; }
+    .page-header { height:16mm; display:flex; align-items:flex-start; justify-content:space-between; border-bottom:1px solid #7d827a; }
+    .page-header h1 { margin:0; font-size:17pt; line-height:1.1; }
+    .page-header p { margin:2mm 0 0; color:var(--muted); font-size:8pt; }
+    .page-code { padding:2mm 3mm; border-radius:2mm; color:#fff; background:var(--accent); font-size:8.5pt; font-weight:800; }
+    .cut-note { position:absolute; right:10mm; bottom:5mm; color:#8a8e87; font-size:6.5pt; }
+    .cards { display:grid; gap:5mm; margin-top:6mm; }
+    .scenario-cards { grid-template-rows:repeat(3,1fr); height:252mm; }
+    .scenario-card { position:relative; padding:5mm 6mm; border:1px dashed #949a91; border-top:4mm solid var(--accent); border-radius:2mm; background:#fff; }
+    .card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:5mm; }
+    .card-top h2 { margin:0; font-size:14pt; }
+    .card-top .scenario-number { color:var(--accent); font-size:9pt; font-weight:900; letter-spacing:.08em; }
+    .scenario-grid { display:grid; grid-template-columns:1fr 1fr; gap:3.2mm 6mm; margin-top:4mm; }
+    .fact { padding-bottom:2mm; border-bottom:1px solid #d9ddd6; }
+    .fact span { display:block; color:var(--muted); font-size:7.3pt; }
+    .fact strong { display:block; margin-top:1mm; font-size:10.5pt; line-height:1.25; }
+    .fact.wide { grid-column:1/-1; padding:2.3mm 3mm; border:0; border-left:2mm solid var(--accent); background:color-mix(in srgb,var(--accent) 7%,white); }
+    .card-id { position:absolute; right:4mm; bottom:3mm; color:#8a8e87; font-size:6.5pt; }
+    .prompt { position:absolute; left:6mm; bottom:3mm; color:#4b5049; font-size:7pt; font-weight:700; }
+
+    .mixing-cards { grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; height:252mm; }
+    .mixing-card { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:8mm; border:1px dashed #949a91; border-top:4mm solid var(--accent); border-radius:2mm; text-align:center; }
+    .mix-product { position:absolute; top:5mm; left:6mm; color:var(--accent); font-size:8pt; font-weight:900; letter-spacing:.06em; }
+    .package-icon { width:38mm; height:48mm; margin-bottom:6mm; border:1.2mm solid #4c514a; border-radius:4mm 4mm 7mm 7mm; background:linear-gradient(145deg,#fff 0 38%,#e7e9e5 38% 52%,#fff 52%); position:relative; }
+    .package-icon::before { content:"实验药物"; position:absolute; left:5mm; right:5mm; top:16mm; padding:2mm 0; color:#555a53; border-top:1px solid #8b9089; border-bottom:1px solid #8b9089; font-size:8pt; font-weight:800; }
+    .package-icon::after { content:""; position:absolute; left:13mm; bottom:5mm; width:10mm; height:10mm; border:1px solid #7b8078; border-radius:50%; }
+    .mixing-card h2 { margin:0; font-size:19pt; }
+    .mixing-card p { margin:3mm 0 0; color:var(--muted); font-size:8pt; }
+    .mix-card-id { position:absolute; right:5mm; bottom:4mm; color:#8a8e87; font-size:6.5pt; }
+
+    .dose-cards { grid-template-columns:1fr 1fr; grid-template-rows:repeat(4,1fr); height:252mm; }
+    .dose-card { position:relative; display:grid; grid-template-columns:28mm 1fr; align-items:center; gap:7mm; padding:5mm 7mm; border:1px dashed #949a91; border-left:4mm solid var(--accent); border-radius:2mm; }
+    .dose-card.half { border-left-style:dashed; background:color-mix(in srgb,var(--accent) 4%,white); }
+    .bottle { width:22mm; height:31mm; margin:auto; border:1.3mm solid #313530; border-radius:3mm 3mm 5mm 5mm; position:relative; background:#fff; }
+    .bottle::before { content:""; position:absolute; left:5mm; top:-6mm; width:10mm; height:5mm; border:1.3mm solid #313530; border-bottom:0; border-radius:1mm 1mm 0 0; }
+    .bottle::after { content:""; position:absolute; left:3mm; right:3mm; top:10mm; height:9mm; border-top:1px solid #6f746d; border-bottom:1px solid #6f746d; }
+    .half .bottle { background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 16%,white) 0 50%,#fff 50%); }
+    .dose-kind { color:var(--accent); font-size:10pt; font-weight:900; }
+    .dose-card h2 { margin:1mm 0 0; font-size:25pt; line-height:1; }
+    .dose-card p { margin:2mm 0 0; color:var(--muted); font-size:8pt; }
+    .dose-card-id { position:absolute; right:5mm; bottom:4mm; color:#8a8e87; font-size:6.5pt; }
+
+    .a { --accent:#2c708d; } .b { --accent:#377748; } .c { --accent:#8b5a2b; }
+    .disclaimer { position:absolute; left:10mm; bottom:5mm; color:#8a4d39; font-size:6.5pt; font-weight:700; }
+    @page { size:A4 portrait; margin:0; }
+    @media print { html, body { background:#fff; } .page { margin:0; } }
+  </style>
+</head>
+<body>
+  <section class="page a">
+    <header class="page-header"><div><h1>T1 情境适用性判断卡</h1><p>依次展示；卡片顺序由研究者随机化</p></div><div class="page-code">PRODUCT A · 玉米除草剂</div></header>
+    <div class="cards scenario-cards">
+      <article class="scenario-card"><div class="card-top"><div><div class="scenario-number">情境 01</div><h2>当前田间情况</h2></div></div><div class="scenario-grid"><div class="fact"><span>作物</span><strong>玉米</strong></div><div class="fact"><span>防治对象</span><strong>一年生禾本科杂草</strong></div><div class="fact"><span>当前时期</span><strong>玉米4叶期，杂草3叶期</strong></div><div class="fact"><span>本季已使用本品</span><strong>0 次</strong></div><div class="fact wide"><span>补充情况</span><strong>杂草密度一般，本季尚未使用本品。</strong></div></div><span class="prompt">如果现在是这个情况，你会使用 Product A 吗？</span><span class="card-id">A-T1-01</span></article>
+      <article class="scenario-card"><div class="card-top"><div><div class="scenario-number">情境 02</div><h2>当前田间情况</h2></div></div><div class="scenario-grid"><div class="fact"><span>作物</span><strong>玉米</strong></div><div class="fact"><span>防治对象</span><strong>一年生禾本科杂草</strong></div><div class="fact"><span>当前时期</span><strong>玉米4叶期，杂草3叶期</strong></div><div class="fact"><span>本季已使用本品</span><strong>0 次</strong></div><div class="fact wide"><span>补充情况</span><strong>杂草密度较高，担心普通剂量效果不够。</strong></div></div><span class="prompt">如果现在是这个情况，你会使用 Product A 吗？</span><span class="card-id">A-T1-02</span></article>
+      <article class="scenario-card"><div class="card-top"><div><div class="scenario-number">情境 03</div><h2>当前田间情况</h2></div></div><div class="scenario-grid"><div class="fact"><span>作物</span><strong>玉米</strong></div><div class="fact"><span>防治对象</span><strong>一年生禾本科杂草</strong></div><div class="fact"><span>当前时期</span><strong>玉米4叶期，杂草3叶期</strong></div><div class="fact"><span>本季已使用本品</span><strong>1 次</strong></div><div class="fact wide"><span>补充情况</span><strong>上一次使用后效果正常，现在田间又出现杂草。</strong></div></div><span class="prompt">如果现在是这个情况，你会使用 Product A 吗？</span><span class="card-id">A-T1-03</span></article>
+    </div><span class="disclaimer">实验用虚构材料 · 禁止用于真实农业生产</span><span class="cut-note">沿虚线裁切</span>
+  </section>
+
+  <section class="page b">
+    <header class="page-header"><div><h1>T1 情境适用性判断卡</h1><p>依次展示；卡片顺序由研究者随机化</p></div><div class="page-code">PRODUCT B · 小麦杀菌剂</div></header>
+    <div class="cards scenario-cards">
+      <article class="scenario-card"><div class="card-top"><div><div class="scenario-number">情境 01</div><h2>当前田间情况</h2></div></div><div class="scenario-grid"><div class="fact"><span>作物</span><strong>小麦</strong></div><div class="fact"><span>防治对象</span><strong>白粉病</strong></div><div class="fact"><span>当前时期</span><strong>发病初期</strong></div><div class="fact"><span>本季已使用本品</span><strong>0 次</strong></div><div class="fact wide"><span>补充情况</span><strong>病斑刚出现，本季尚未使用本品。</strong></div></div><span class="prompt">如果现在是这个情况，你会使用 Product B 吗？</span><span class="card-id">B-T1-01</span></article>
+      <article class="scenario-card"><div class="card-top"><div><div class="scenario-number">情境 02</div><h2>当前田间情况</h2></div></div><div class="scenario-grid"><div class="fact"><span>作物</span><strong>小麦</strong></div><div class="fact"><span>防治对象</span><strong>白粉病</strong></div><div class="fact"><span>当前时期</span><strong>发病初期</strong></div><div class="fact"><span>本季已使用本品</span><strong>1 次</strong></div><div class="fact wide"><span>补充情况</span><strong>距离上次施药已8天，上一次药效明显下降。</strong></div></div><span class="prompt">如果现在是这个情况，你会使用 Product B 吗？</span><span class="card-id">B-T1-02</span></article>
+      <article class="scenario-card"><div class="card-top"><div><div class="scenario-number">情境 03</div><h2>当前田间情况</h2></div></div><div class="scenario-grid"><div class="fact"><span>作物</span><strong>小麦</strong></div><div class="fact"><span>防治对象</span><strong>白粉病</strong></div><div class="fact"><span>当前时期</span><strong>发病初期</strong></div><div class="fact"><span>本季已使用本品</span><strong>2 次</strong></div><div class="fact wide"><span>补充情况</span><strong>距离上次施药已8天，田间仍有少量病斑。</strong></div></div><span class="prompt">如果现在是这个情况，你会使用 Product B 吗？</span><span class="card-id">B-T1-03</span></article>
+    </div><span class="disclaimer">实验用虚构材料 · 禁止用于真实农业生产</span><span class="cut-note">沿虚线裁切</span>
+  </section>
+
+  <section class="page c">
+    <header class="page-header"><div><h1>T1 情境适用性判断卡</h1><p>依次展示；卡片顺序由研究者随机化</p></div><div class="page-code">PRODUCT C · 玉米杀虫剂</div></header>
+    <div class="cards scenario-cards">
+      <article class="scenario-card"><div class="card-top"><div><div class="scenario-number">情境 01</div><h2>当前田间情况</h2></div></div><div class="scenario-grid"><div class="fact"><span>作物</span><strong>玉米</strong></div><div class="fact"><span>防治对象</span><strong>玉米螟</strong></div><div class="fact"><span>当前时期</span><strong>卵孵化盛期至低龄幼虫期</strong></div><div class="fact"><span>本季已使用本品</span><strong>0 次</strong></div><div class="fact wide"><span>补充情况</span><strong>心叶开始出现轻微受害，本季尚未使用本品。</strong></div></div><span class="prompt">如果现在是这个情况，你会使用 Product C 吗？</span><span class="card-id">C-T1-01</span></article>
+      <article class="scenario-card"><div class="card-top"><div><div class="scenario-number">情境 02</div><h2>当前田间情况</h2></div></div><div class="scenario-grid"><div class="fact"><span>作物</span><strong>玉米</strong></div><div class="fact"><span>防治对象</span><strong>玉米螟</strong></div><div class="fact"><span>当前时期</span><strong>卵孵化盛期至低龄幼虫期</strong></div><div class="fact"><span>本季已使用本品</span><strong>2 次</strong></div><div class="fact wide"><span>补充情况</span><strong>距离上次施药已8天，上一次防治效果明显下降。</strong></div></div><span class="prompt">如果现在是这个情况，你会使用 Product C 吗？</span><span class="card-id">C-T1-02</span></article>
+      <article class="scenario-card"><div class="card-top"><div><div class="scenario-number">情境 03</div><h2>当前田间情况</h2></div></div><div class="scenario-grid"><div class="fact"><span>作物</span><strong>玉米</strong></div><div class="fact"><span>防治对象</span><strong>玉米螟</strong></div><div class="fact"><span>当前时期</span><strong>卵孵化盛期至低龄幼虫期</strong></div><div class="fact"><span>本季已使用本品</span><strong>3 次</strong></div><div class="fact wide"><span>补充情况</span><strong>距离上次施药已8天，田间仍有低龄幼虫。</strong></div></div><span class="prompt">如果现在是这个情况，你会使用 Product C 吗？</span><span class="card-id">C-T1-03</span></article>
+    </div><span class="disclaimer">实验用虚构材料 · 禁止用于真实农业生产</span><span class="cut-note">沿虚线裁切</span>
+  </section>
+
+  <section class="page a"><header class="page-header"><div><h1>T2 混配药物卡</h1><p>请将每张卡放入“明确不能混用 / 标签未发现明确禁忌 / 不确定”区域</p></div><div class="page-code">PRODUCT A</div></header><div class="cards mixing-cards">
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT A 混配</span><div class="package-icon"></div><h2>辛硫磷</h2><p>实验药物卡</p><span class="mix-card-id">A-T2-01</span></article>
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT A 混配</span><div class="package-icon"></div><h2>敌敌畏</h2><p>实验药物卡</p><span class="mix-card-id">A-T2-02</span></article>
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT A 混配</span><div class="package-icon"></div><h2>含铜制剂</h2><p>实验药物卡</p><span class="mix-card-id">A-T2-03</span></article>
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT A 混配</span><div class="package-icon"></div><h2>生物杀菌剂</h2><p>实验药物卡</p><span class="mix-card-id">A-T2-04</span></article>
+  </div><span class="disclaimer">实验用虚构材料 · 禁止用于真实农业生产</span><span class="cut-note">沿虚线裁切</span></section>
+
+  <section class="page b"><header class="page-header"><div><h1>T2 混配药物卡</h1><p>请将每张卡放入“明确不能混用 / 标签未发现明确禁忌 / 不确定”区域</p></div><div class="page-code">PRODUCT B</div></header><div class="cards mixing-cards">
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT B 混配</span><div class="package-icon"></div><h2>波尔多液</h2><p>实验药物卡</p><span class="mix-card-id">B-T2-01</span></article>
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT B 混配</span><div class="package-icon"></div><h2>氢氧化铜制剂</h2><p>实验药物卡</p><span class="mix-card-id">B-T2-02</span></article>
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT B 混配</span><div class="package-icon"></div><h2>辛硫磷</h2><p>实验药物卡</p><span class="mix-card-id">B-T2-03</span></article>
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT B 混配</span><div class="package-icon"></div><h2>矿物油助剂</h2><p>实验药物卡</p><span class="mix-card-id">B-T2-04</span></article>
+  </div><span class="disclaimer">实验用虚构材料 · 禁止用于真实农业生产</span><span class="cut-note">沿虚线裁切</span></section>
+
+  <section class="page c"><header class="page-header"><div><h1>T2 混配药物卡</h1><p>请将每张卡放入“明确不能混用 / 标签未发现明确禁忌 / 不确定”区域</p></div><div class="page-code">PRODUCT C</div></header><div class="cards mixing-cards">
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT C 混配</span><div class="package-icon"></div><h2>石硫合剂</h2><p>实验药物卡</p><span class="mix-card-id">C-T2-01</span></article>
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT C 混配</span><div class="package-icon"></div><h2>波尔多液</h2><p>实验药物卡</p><span class="mix-card-id">C-T2-02</span></article>
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT C 混配</span><div class="package-icon"></div><h2>生物杀菌剂</h2><p>实验药物卡</p><span class="mix-card-id">C-T2-03</span></article>
+    <article class="mixing-card"><span class="mix-product">与 PRODUCT C 混配</span><div class="package-icon"></div><h2>辛硫磷</h2><p>实验药物卡</p><span class="mix-card-id">C-T2-04</span></article>
+  </div><span class="disclaimer">实验用虚构材料 · 禁止用于真实农业生产</span><span class="cut-note">沿虚线裁切</span></section>
+
+  <section class="page a"><header class="page-header"><div><h1>T3 15 L实际用量组合卡</h1><p>参与者可拿取任意数量的整瓶卡和半瓶卡</p></div><div class="page-code">PRODUCT A · 15 L 水</div></header><div class="cards dose-cards">
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>50 mL</h2><p>Product A 实验剂量卡</p></div><span class="dose-card-id">A-T3-F1</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>25 mL</h2><p>Product A 实验剂量卡</p></div><span class="dose-card-id">A-T3-H1</span></article>
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>50 mL</h2><p>Product A 实验剂量卡</p></div><span class="dose-card-id">A-T3-F2</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>25 mL</h2><p>Product A 实验剂量卡</p></div><span class="dose-card-id">A-T3-H2</span></article>
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>50 mL</h2><p>Product A 实验剂量卡</p></div><span class="dose-card-id">A-T3-F3</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>25 mL</h2><p>Product A 实验剂量卡</p></div><span class="dose-card-id">A-T3-H3</span></article>
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>50 mL</h2><p>Product A 实验剂量卡</p></div><span class="dose-card-id">A-T3-F4</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>25 mL</h2><p>Product A 实验剂量卡</p></div><span class="dose-card-id">A-T3-H4</span></article>
+  </div><span class="disclaimer">实验用虚构材料 · 禁止用于真实农业生产</span><span class="cut-note">沿虚线裁切</span></section>
+
+  <section class="page b"><header class="page-header"><div><h1>T3 15 L实际用量组合卡</h1><p>参与者可拿取任意数量的整瓶卡和半瓶卡</p></div><div class="page-code">PRODUCT B · 15 L 水</div></header><div class="cards dose-cards">
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>50 mL</h2><p>Product B 实验剂量卡</p></div><span class="dose-card-id">B-T3-F1</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>25 mL</h2><p>Product B 实验剂量卡</p></div><span class="dose-card-id">B-T3-H1</span></article>
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>50 mL</h2><p>Product B 实验剂量卡</p></div><span class="dose-card-id">B-T3-F2</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>25 mL</h2><p>Product B 实验剂量卡</p></div><span class="dose-card-id">B-T3-H2</span></article>
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>50 mL</h2><p>Product B 实验剂量卡</p></div><span class="dose-card-id">B-T3-F3</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>25 mL</h2><p>Product B 实验剂量卡</p></div><span class="dose-card-id">B-T3-H3</span></article>
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>50 mL</h2><p>Product B 实验剂量卡</p></div><span class="dose-card-id">B-T3-F4</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>25 mL</h2><p>Product B 实验剂量卡</p></div><span class="dose-card-id">B-T3-H4</span></article>
+  </div><span class="disclaimer">实验用虚构材料 · 禁止用于真实农业生产</span><span class="cut-note">沿虚线裁切</span></section>
+
+  <section class="page c"><header class="page-header"><div><h1>T3 15 L实际用量组合卡</h1><p>参与者可拿取任意数量的整瓶卡和半瓶卡</p></div><div class="page-code">PRODUCT C · 15 L 水</div></header><div class="cards dose-cards">
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>40 mL</h2><p>Product C 实验剂量卡</p></div><span class="dose-card-id">C-T3-F1</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>20 mL</h2><p>Product C 实验剂量卡</p></div><span class="dose-card-id">C-T3-H1</span></article>
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>40 mL</h2><p>Product C 实验剂量卡</p></div><span class="dose-card-id">C-T3-F2</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>20 mL</h2><p>Product C 实验剂量卡</p></div><span class="dose-card-id">C-T3-H2</span></article>
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>40 mL</h2><p>Product C 实验剂量卡</p></div><span class="dose-card-id">C-T3-F3</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>20 mL</h2><p>Product C 实验剂量卡</p></div><span class="dose-card-id">C-T3-H3</span></article>
+    <article class="dose-card"><div class="bottle"></div><div><div class="dose-kind">1 瓶</div><h2>40 mL</h2><p>Product C 实验剂量卡</p></div><span class="dose-card-id">C-T3-F4</span></article><article class="dose-card half"><div class="bottle"></div><div><div class="dose-kind">半瓶</div><h2>20 mL</h2><p>Product C 实验剂量卡</p></div><span class="dose-card-id">C-T3-H4</span></article>
+  </div><span class="disclaimer">实验用虚构材料 · 禁止用于真实农业生产</span><span class="cut-note">沿虚线裁切</span></section>
+</body>
+</html>

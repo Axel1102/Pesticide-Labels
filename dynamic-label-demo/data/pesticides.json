@@ -144,7 +144,7 @@
         "restrictedCategory": "碱性药剂",
         "plainExplanation": "呈碱性、用于农业防治的药剂，本品标签明确禁止与其混用。",
         "restrictedExamples": ["石硫合剂", "波尔多液"],
-        "notExplicitlyRestrictedExamples": ["生物杀菌剂", "含铜制剂"]
+        "notExplicitlyRestrictedExamples": ["生物杀菌剂", "辛硫磷"]
       },
       "problemGuidance": {
         "trigger": "上一次防治效果明显下降",
