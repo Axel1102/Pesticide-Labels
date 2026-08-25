@@ -1,12 +1,132 @@
 {
-  "datasetVersion": "1.2.0",
+  "datasetVersion": "1.3.0",
   "experimentalUseOnly": true,
   "disclaimer": "所有产品、成分、登记信息、剂量和混配信息均为虚构，仅用于标签实验，禁止用于真实农业生产。",
-  "equipment": {
-    "name": "背负式喷雾器",
-    "capacityLiters": 15,
-    "capacityOptionsLiters": [10, 15, 16, 20]
+  "regionProfile": {
+    "name": "陕西关中小麦—玉米生产场景",
+    "description": "通俗名称和典型对象参考陕西省农业农村厅公开农技资料；图片使用可核验来源的真实照片。",
+    "references": [
+      {
+        "label": "临潼：夏玉米田后化除技术要点",
+        "url": "https://nynct.shaanxi.gov.cn/zt/snzbxx/zbjs/202506/t20250619_3533906.html"
+      },
+      {
+        "label": "兴平：小麦白粉病发生及防治要点",
+        "url": "https://nynct.shaanxi.gov.cn/zt/snzbxx/zbjs/202503/t20250320_3464501.html"
+      },
+      {
+        "label": "咸阳：玉米苗期病虫的发生与防治",
+        "url": "https://nynct.shaanxi.gov.cn/zt/snzbxx/zbjs/202506/t20250606_3528964.html"
+      }
+    ]
   },
+  "mixingContainers": [
+    {
+      "id": "bucket-10",
+      "name": "10 L 常用水桶",
+      "familiarName": "半桶左右",
+      "capacityLiters": 10,
+      "kind": "bucket",
+      "note": "先确认桶的实际容量，并在桶外做清水刻度标记。"
+    },
+    {
+      "id": "sprayer-15",
+      "name": "15 L 背负式喷雾器",
+      "familiarName": "常见喷雾器",
+      "capacityLiters": 15,
+      "kind": "sprayer",
+      "note": "以设备标注容量为准。"
+    },
+    {
+      "id": "sprayer-16",
+      "name": "16 L 背负式喷雾器",
+      "familiarName": "大号喷雾器",
+      "capacityLiters": 16,
+      "kind": "sprayer",
+      "note": "以设备标注容量为准。"
+    },
+    {
+      "id": "bucket-20",
+      "name": "20 L 常用大桶",
+      "familiarName": "一大桶水",
+      "capacityLiters": 20,
+      "kind": "bucket",
+      "note": "先确认桶的实际容量，并在桶外做清水刻度标记。"
+    },
+    {
+      "id": "custom-mixing",
+      "name": "我自己的容器",
+      "familiarName": "输入实际容量",
+      "capacityLiters": 15,
+      "kind": "custom",
+      "note": "建议先用标准量具量出容器能装多少升水。"
+    }
+  ],
+  "measuringContainers": [
+    {
+      "id": "product-bottle",
+      "name": "本品农药瓶",
+      "familiarName": "看瓶身红线",
+      "capacityMl": 0,
+      "kind": "pesticide-bottle",
+      "accuracy": "按瓶身红线取药",
+      "note": "系统在瓶身图上画出本次红线，不会把一整瓶当作一次用量。"
+    },
+    {
+      "id": "cylinder-100",
+      "name": "100 mL 量筒",
+      "familiarName": "按毫升刻度量",
+      "capacityMl": 100,
+      "kind": "cylinder",
+      "accuracy": "看量筒刻度红线",
+      "note": "读取药液最低点对应的毫升刻度。"
+    },
+    {
+      "id": "cup-50",
+      "name": "50 mL 刻度量杯",
+      "familiarName": "小量杯",
+      "capacityMl": 50,
+      "kind": "cup",
+      "accuracy": "看量杯刻度红线",
+      "note": "超过一杯时按整杯数和最后一杯刻度分次量取。"
+    },
+    {
+      "id": "mineral-bottle-550",
+      "name": "550 mL 矿泉水瓶",
+      "familiarName": "农夫山泉小瓶大小",
+      "capacityMl": 550,
+      "kind": "bottle",
+      "accuracy": "实验前先画红线",
+      "note": "先用标准量具在空瓶外画好本次红线；用后不得再装饮用水。"
+    },
+    {
+      "id": "cap-10",
+      "name": "约 10 mL 瓶盖",
+      "familiarName": "先量清瓶盖容量",
+      "capacityMl": 10,
+      "kind": "cap",
+      "accuracy": "实验前先量清一盖",
+      "note": "不同瓶盖容量不一样，默认10 mL只用于实验演示。"
+    },
+    {
+      "id": "paper-cup-200",
+      "name": "200 mL 一次性纸杯",
+      "familiarName": "看杯身红线",
+      "capacityMl": 200,
+      "kind": "paper-cup",
+      "accuracy": "实验前先画红线",
+      "note": "先用标准量具在杯外画好本次红线，每次只使用一个专用纸杯。"
+    },
+    {
+      "id": "custom-measuring",
+      "name": "我自己的量具",
+      "familiarName": "输入实际毫升数",
+      "capacityMl": 50,
+      "kind": "custom-measure",
+      "accuracy": "实验前先校准并画线",
+      "note": "先用标准量筒校准这个量具装满时的毫升数，再在外侧画红线。"
+    }
+  ],
   "products": [
     {
       "id": "product-a",
@@ -24,11 +144,16 @@
       "crop": "玉米",
       "target": "一年生禾本科杂草",
       "targetGuide": {
-        "image": "/images/target-annual-grass-weeds.webp",
-        "plainTitle": "就是田里常见的细叶杂草",
-        "summary": "这类杂草的叶子细长，外形像普通草叶，常从玉米行间成簇长出。",
-        "lookFor": ["叶片细长，叶脉大致平行", "根部常有多根叶片成簇生长", "长大后可能抽出狗尾状或松散的小穗"],
+        "image": "/images/target-green-foxtail-real.jpg",
+        "plainTitle": "就是玉米地里的细叶草、狗尾巴草",
+        "localExamples": ["狗尾草（毛毛狗）", "马唐（抓地龙）", "牛筋草", "稗草"],
+        "regionalNote": "陕西临潼公开农技资料将狗尾草、马唐、牛筋草和稗草列为当地夏玉米田常见禾本科杂草。",
+        "summary": "这类草叶子细长，和玉米叶子有些像；狗尾草长大后会抽出毛茸茸的穗。",
+        "lookFor": ["叶片细长，叶脉大致平行", "常从玉米行间成簇长出", "狗尾草长大后会出现毛茸茸的狗尾状穗"],
         "caution": "幼苗期可能和玉米叶片相似，不确定时不要只凭一张图片判断。"
+        ,"imageCredit": "真实照片：Petr Filippov / Wikimedia Commons，CC BY 3.0",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Setaria_viridis.JPG",
+        "regionalSourceUrl": "https://nynct.shaanxi.gov.cn/zt/snzbxx/zbjs/202506/t20250619_3533906.html"
       },
       "distractorTargets": ["小麦田杂草", "玉米螟"],
       "applicationTiming": {
@@ -88,11 +213,16 @@
       "crop": "小麦",
       "target": "白粉病",
       "targetGuide": {
-        "image": "/images/target-wheat-powdery-mildew.webp",
-        "plainTitle": "叶片像撒了一层白面粉",
+        "image": "/images/target-wheat-powdery-mildew-real.jpg",
+        "plainTitle": "麦叶上像撒了一层白面粉",
+        "localExamples": ["叶面出现白色粉斑", "白斑逐渐连成片", "严重时叶片发黄变干"],
+        "regionalNote": "陕西兴平2025年农技资料专门提示小麦白粉病，其最直观特征就是麦叶表面的白色粉状斑。",
         "summary": "发病早期，麦叶表面会出现一小块一小块的白色粉状斑，随后可能连成片。",
         "lookFor": ["白斑主要附着在叶片表面", "用眼看像面粉或白灰落在叶子上", "严重时叶片发黄、变干"],
         "caution": "泥点、灰尘和药液残留也可能发白，应结合斑块是否继续扩大来判断。"
+        ,"imageCredit": "真实照片：Agronom / Wikimedia Commons，CC BY-SA 4.0",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Blumeria_graminis_on_winter_wheat.JPG",
+        "regionalSourceUrl": "https://nynct.shaanxi.gov.cn/zt/snzbxx/zbjs/202503/t20250320_3464501.html"
       },
       "distractorTargets": ["小麦条锈病", "玉米螟"],
       "applicationTiming": {
@@ -152,11 +282,16 @@
       "crop": "玉米",
       "target": "玉米螟",
       "targetGuide": {
-        "image": "/images/target-corn-borer.webp",
-        "plainTitle": "会钻进玉米心叶和茎秆的小虫",
+        "image": "/images/target-asian-corn-borer-real.jpg",
+        "plainTitle": "陕西农民常说的玉米钻心虫",
+        "localExamples": ["叶片展开后出现一排小圆孔", "心叶里有虫粪和碎屑", "幼虫会钻进茎秆"],
+        "regionalNote": "陕西咸阳农技资料将玉米螟列为玉米苗期主要防治对象；田间常叫钻心虫。",
         "summary": "幼虫较小时先在叶片和心叶附近取食，长大后会钻进茎秆，越晚发现越难处理。",
         "lookFor": ["嫩叶上出现一排排针孔状小洞", "心叶附近可能看到虫粪或碎屑", "幼虫身体偏浅色，头部颜色较深"],
         "caution": "图中为低龄幼虫示意；已经钻入茎秆的虫通常不容易直接看到。"
+        ,"imageCredit": "真实照片：Kembangraps / Wikimedia Commons，CC BY-SA 3.0",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:O_furnacalis_1.JPG",
+        "regionalSourceUrl": "https://nynct.shaanxi.gov.cn/zt/snzbxx/zbjs/202506/t20250606_3528964.html"
       },
       "distractorTargets": ["玉米蚜虫", "一年生禾本科杂草"],
       "applicationTiming": {

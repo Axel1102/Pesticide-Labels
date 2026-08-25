@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: '动态农药标签实验原型',
-  description: '基于作物、对象、时期、使用历史和混配计划生成个性化用药建议的实验原型。',
+  title: 'Product A 动态农药标签',
+  description: '按亩数直接生成水量、药量和量药容器换算结果的实验原型。',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
