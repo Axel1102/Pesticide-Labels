@@ -74,8 +74,8 @@
     },
     {
       "id": "cylinder-100",
-      "name": "100 mL 量筒",
-      "familiarName": "按毫升刻度量",
+      "name": "带刻度量筒",
+      "familiarName": "看刻度量",
       "capacityMl": 100,
       "kind": "cylinder",
       "accuracy": "看量筒刻度红线",
@@ -83,7 +83,7 @@
     },
     {
       "id": "cup-50",
-      "name": "50 mL 刻度量杯",
+      "name": "带刻度小量杯",
       "familiarName": "小量杯",
       "capacityMl": 50,
       "kind": "cup",
@@ -92,7 +92,7 @@
     },
     {
       "id": "mineral-bottle-550",
-      "name": "550 mL 矿泉水瓶",
+      "name": "小矿泉水瓶",
       "familiarName": "农夫山泉小瓶大小",
       "capacityMl": 550,
       "kind": "bottle",
@@ -101,16 +101,16 @@
     },
     {
       "id": "cap-10",
-      "name": "约 10 mL 瓶盖",
+      "name": "普通瓶盖",
       "familiarName": "先量清瓶盖容量",
-      "capacityMl": 10,
+      "capacityMl": 5,
       "kind": "cap",
       "accuracy": "实验前先量清一盖",
-      "note": "不同瓶盖容量不一样，默认10 mL只用于实验演示。"
+      "note": "不同瓶盖容量不一样，本页按约5 mL演示；使用前应先量清一盖的实际容量。"
     },
     {
       "id": "paper-cup-200",
-      "name": "200 mL 一次性纸杯",
+      "name": "一次性纸杯",
       "familiarName": "看杯身红线",
       "capacityMl": 200,
       "kind": "paper-cup",
@@ -142,12 +142,12 @@
       "formulation": "悬浮剂",
       "toxicity": "低毒（实验模拟分级）",
       "crop": "玉米",
-      "target": "一年生禾本科杂草",
+      "target": "狗尾草、马唐、牛筋草、稗草",
       "targetGuide": {
         "image": "/images/target-green-foxtail-real.jpg",
         "plainTitle": "就是玉米地里的细叶草、狗尾巴草",
         "localExamples": ["狗尾草（毛毛狗）", "马唐（抓地龙）", "牛筋草", "稗草"],
-        "regionalNote": "陕西临潼公开农技资料将狗尾草、马唐、牛筋草和稗草列为当地夏玉米田常见禾本科杂草。",
+        "regionalNote": "陕西临潼公开农技资料将狗尾草、马唐、牛筋草和稗草列为当地夏玉米田常见杂草。",
         "summary": "这类草叶子细长，和玉米叶子有些像；狗尾草长大后会抽出毛茸茸的穗。",
         "lookFor": ["叶片细长，叶脉大致平行", "常从玉米行间成簇长出", "狗尾草长大后会出现毛茸茸的狗尾状穗"],
         "caution": "幼苗期可能和玉米叶片相似，不确定时不要只凭一张图片判断。"
@@ -161,12 +161,12 @@
         "options": ["玉米3-5叶期、杂草2-4叶期", "玉米6叶期及以后", "小麦生长期"]
       },
       "dosage": {
-        "standardLabel": "每15 L水45–75 mL",
+        "standardLabel": "每15 L水20–30 mL",
         "tankLiters": 15,
-        "minimumAmountMl": 45,
-        "recommendedAmountMl": 60,
-        "adjustedAmountMl": 70,
-        "maximumAmountMl": 75,
+        "minimumAmountMl": 20,
+        "recommendedAmountMl": 25,
+        "adjustedAmountMl": 30,
+        "maximumAmountMl": 30,
         "bottleVolumeMl": 200,
         "applicationMethod": "对杂草茎叶均匀喷雾，避开玉米心叶"
       },
@@ -188,12 +188,12 @@
       },
       "problemGuidance": {
         "trigger": "杂草较多或效果不均",
-        "do": ["确认玉米和杂草是否仍在标签叶期", "检查喷雾覆盖是否均匀、是否发生药液漂移", "本季尚未使用时，可把每15 L用量从推荐中值60 mL适当上调到70 mL"],
-        "doNot": ["每15 L不得超过75 mL", "本季最多1次，不得补喷"]
+        "do": ["确认玉米和杂草是否仍在标签叶期", "检查喷雾覆盖是否均匀、是否发生药液漂移", "本季尚未使用时，可把每15 L用量从一般用量25 mL适当上调到30 mL"],
+        "doNot": ["每15 L不得超过30 mL", "本季最多1次，不得补喷"]
       },
       "fullLabel": {
         "performance": "选择性苗后除草剂，药剂经杂草茎叶吸收后抑制其生长。",
-        "technicalRequirements": ["于推荐叶期施药", "每15 L用量45–75 mL，推荐中值60 mL", "每季最多使用1次", "大风天或预计1小时内降雨时请勿施药"],
+        "technicalRequirements": ["于玉米3–5叶期、杂草2–4叶期施药", "每15 L用量20–30 mL，一般用量25 mL", "每季最多使用1次", "大风天或预计1小时内降雨时请勿施药"],
         "precautions": ["不得用于小麦田", "避免漂移至邻近敏感作物", "做好个人防护并避免污染水体"]
       }
     },
@@ -233,7 +233,7 @@
         "standardLabel": "每15 L水30–60 mL",
         "tankLiters": 15,
         "minimumAmountMl": 30,
-        "recommendedAmountMl": 45,
+        "recommendedAmountMl": 50,
         "adjustedAmountMl": 55,
         "maximumAmountMl": 60,
         "bottleVolumeMl": 200,
@@ -257,12 +257,12 @@
       },
       "problemGuidance": {
         "trigger": "上一次药效明显下降",
-        "do": ["检查本季已经使用的次数和喷雾覆盖", "可把每15 L用量从推荐量45 mL适当上调到55 mL", "需要再次施用时至少间隔7天，并轮换作用方式"],
+        "do": ["检查本季已经使用的次数和喷雾覆盖", "可把每15 L用量从一般用量50 mL适当上调到55 mL", "需要再次施用时至少间隔7天，并轮换作用方式"],
         "doNot": ["每15 L不得超过60 mL", "本季不得超过2次"]
       },
       "fullLabel": {
         "performance": "内吸性杀菌剂，具有预防和治疗作用，可用于防治小麦白粉病。",
-        "technicalRequirements": ["于发病前或发病初期施药", "每15 L用量30–60 mL，推荐量45 mL", "间隔7-10天施药1次", "每季最多使用2次，安全间隔期20天"],
+        "technicalRequirements": ["于发病前或发病初期施药", "每15 L用量30–60 mL，一般用量50 mL", "间隔7-10天施药1次", "每季最多使用2次，安全间隔期20天"],
         "precautions": ["不能与含铜制剂混用", "蜜源作物花期及水体附近禁用", "做好个人防护并避免污染水体"]
       }
     },
@@ -293,7 +293,7 @@
         "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:O_furnacalis_1.JPG",
         "regionalSourceUrl": "https://nynct.shaanxi.gov.cn/zt/snzbxx/zbjs/202506/t20250606_3528964.html"
       },
-      "distractorTargets": ["玉米蚜虫", "一年生禾本科杂草"],
+      "distractorTargets": ["玉米蚜虫", "狗尾草"],
       "applicationTiming": {
         "recommended": "卵孵化盛期至低龄幼虫期",
         "options": ["卵孵化盛期至低龄幼虫期", "高龄幼虫大量钻蛀后", "玉米收获前7天"]
