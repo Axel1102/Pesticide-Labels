@@ -294,7 +294,6 @@ body { display: flex; justify-content: center; padding: 16px; }
 .a4-conversions strong { font-size: 10.5pt; }
 .a4-scale { display: grid; place-items: center; width: 12mm; height: 10mm; border: .7mm solid var(--accent-dark); color: var(--accent-dark); font-size: 13pt; font-weight: 900; }
 .a4-ml-mark { display: grid; place-items: center; width: 12mm; height: 11mm; border: .7mm solid var(--accent-dark); color: var(--accent-dark); font-size: 9pt; font-weight: 900; line-height: 1; text-align: center; }
-.a4-cylinder-real { display: block; width: 12mm; height: 18mm; object-fit: contain; filter: drop-shadow(0 .5mm .5mm rgba(25,35,28,.2)); }
 .a4-caps { display: flex; flex-wrap: wrap; width: 15mm; gap: 1mm; }
 .a4-caps i { width: 4mm; height: 3mm; border: .6mm solid var(--accent-dark); border-radius: 1mm; background: #dae8ec; }
 .a4-caps-img { width: 18mm; height: 11mm; object-fit: contain; filter: drop-shadow(0 .5mm .5mm rgba(25,35,28,.18)); }
@@ -303,11 +302,8 @@ body { display: flex; justify-content: center; padding: 16px; }
 .a4-cap-ten img { width: 3.7mm; height: 3.7mm; object-fit: contain; }
 .a4-real-cup { position: relative; display: block; width: 14mm; height: 18mm; }
 .a4-real-cup img { width: 100%; height: 100%; object-fit: contain; }
-.a4-real-cup i { position: absolute; left: 2.2mm; right: 2.2mm; bottom: 4.2mm; border-top: .8mm solid #c23227; }
 .a4-quarter-bottle { position: relative; display: block; width: 13mm; height: 18mm; }
 .a4-quarter-bottle img { width: 100%; height: 100%; object-fit: contain; }
-.a4-quarter-bottle i { position: absolute; left: 1.5mm; right: 1.5mm; bottom: 4.5mm; border-top: .8mm solid #c23227; }
-.a4-quarter-bottle em { position: absolute; right: -5mm; bottom: 1.5mm; padding: .4mm .7mm; border-radius: 1mm; background: #c23227; color: white; font-family: Arial, sans-serif; font-size: 7pt; font-style: normal; font-weight: 900; }
 .a4-conversions .measure-icon { width: 13mm; height: 15mm; color: var(--accent-dark); }
 .a4-coverage { padding: 1.1mm; background: var(--accent); color: white; font-size: 11pt; font-weight: 900; text-align: center; }
 .a4-dose-guide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1mm; margin-top: 1mm; }
@@ -348,8 +344,8 @@ body { display: flex; justify-content: center; padding: 16px; }
 .a4-mix-ban p { margin: 0; color: #711f18; font-size: 8.2pt; font-weight: 900; line-height: 1.4; text-align: center; }
 .a4-mix-products { display: grid; grid-template-columns: 1fr auto 1fr; gap: .8mm; align-items: end; }
 .a4-mix-products > b { align-self: center; color: var(--danger); font-family: Arial, sans-serif; font-size: 17pt; }
-.a4-mix-products figure { position: relative; height: 21mm; margin: 0; overflow: hidden; }
-.a4-mix-products img { width: 100%; height: 18mm; object-fit: contain; filter: drop-shadow(0 .5mm .6mm rgba(45,20,15,.18)); }
+.a4-mix-products figure { position: relative; height: 18mm; margin: 0; overflow: hidden; }
+.a4-mix-products img { width: 100%; height: 15mm; object-fit: contain; filter: drop-shadow(0 .5mm .6mm rgba(45,20,15,.18)); }
 .a4-mix-products figcaption { position: absolute; inset: auto 0 0; padding: .4mm; border: .4mm solid #a85c50; background: rgba(255,255,255,.95); color: #6d3029; font-size: 7pt; font-weight: 900; text-align: center; }
 .a4-danger-line { margin-top: 1.5mm; padding: 2mm; background: var(--danger); color: white; font-size: 12.5pt; font-weight: 900; text-align: center; }
 .a4-label-info { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1mm; margin-top: 2mm; }
@@ -369,7 +365,7 @@ body { display: flex; justify-content: center; padding: 16px; }
 .product-a-v4 .category-band { margin-top: 1mm; padding: 1.5mm; font-size: 9pt; }
 
 /* Product A v5: task-first hierarchy with local customary units. */
-.product-a-v4 .a4-section { margin-top: 1.5mm; }
+.product-a-v4 .a4-section { margin-top: 1mm; }
 .product-a-v4 .a4-section > h2 strong { margin-left: 2mm; color: var(--ink); font-size: 13pt; }
 .product-a-v4 .a4-weed-heading { margin: .5mm 0 1mm; color: #556064; font-size: 8.5pt; letter-spacing: .08em; }
 .product-a-v4 .a4-target-line { display: flex; align-items: baseline; gap: 6mm; margin-bottom: 1mm; padding: 0 0 .8mm; border-bottom: 1.3px solid var(--accent); }
@@ -378,21 +374,30 @@ body { display: flex; justify-content: center; padding: 16px; }
 .product-a-v4 .a4-target-line b { color: var(--accent-dark); font-size: 14pt; }
 .product-a-v4 .a4-target-line strong { color: var(--ink); font-size: 13pt; }
 .product-a-v4 .a4-target-line em { color: #505750; font-size: 9pt; font-style: normal; font-weight: 750; }
-.product-a-v4 .a4-weeds figure { height: 18.5mm; }
+.product-a-v4 .a4-weeds figure { height: 17mm; }
+.product-a-v4 .a4-target-evidence { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 1mm; height: 17mm; }
+.product-a-v4 .a4-target-evidence figure { position: relative; height: 17mm; margin: 0; overflow: hidden; border: 1px solid var(--line); background: #d8ddcf; }
+.product-a-v4 .a4-target-evidence img { width: 100%; height: 100%; object-fit: cover; }
+.product-a-v4 .a4-target-evidence figcaption { position: absolute; inset: auto 0 0; padding: 2.2mm .8mm .6mm; background: linear-gradient(transparent,rgba(16,24,16,.94)); color: white; font-size: 8pt; font-weight: 900; text-align: center; }
+.product-a-v4 .a4-feature-list { display: grid; align-content: center; gap: .7mm; padding: 1.1mm 2mm; border: 1px solid color-mix(in srgb,var(--accent) 35%,var(--line)); background: var(--accent-soft); color: #3d4946; font-size: 7.6pt; font-weight: 800; }
+.product-a-v4 .a4-feature-list span { display: block; }
+.product-a-v4 .a4-feature-list b { margin-right: .8mm; color: var(--accent-dark); font-family: Arial,sans-serif; }
 
-.product-a-v4 .a4-primary-dose { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 5mm; padding: 2.2mm 13mm; background: white; text-align: center; }
+.product-a-v4 .a4-primary-dose { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 5mm; padding: 1.3mm 13mm; background: white; text-align: center; }
 .product-a-v4 .a4-primary-dose div { display: grid; grid-template-columns: 1fr; }
 .product-a-v4 .a4-primary-dose span { color: #4e5b5f; font-size: 9pt; font-weight: 900; }
 .product-a-v4 .a4-primary-dose strong { color: var(--accent-dark); font-size: 24pt; line-height: 1.05; }
 .product-a-v4 .a4-primary-dose small { margin-top: .5mm; color: #5d6667; font-size: 8.3pt; font-weight: 700; }
 .product-a-v4 .a4-primary-dose > b { color: var(--accent); font-family: Arial, sans-serif; font-size: 24pt; }
-.product-a-v4 .a4-primary-dose .a4-water-reference { grid-template-columns: auto 1fr 1fr; align-items: center; gap: 1mm; margin-top: 1.2mm; padding-top: 1mm; border-top: 1px solid var(--line); }
+.product-a-v4 .a4-primary-dose .a4-water-reference { grid-template-columns: 1fr 1fr; align-items: center; gap: 1mm; margin-top: 1.2mm; padding-top: 1mm; border-top: 1px solid var(--line); }
 .product-a-v4 .a4-water-reference > b { color: #526065; font-size: 7.7pt; white-space: nowrap; }
 .product-a-v4 .a4-water-reference > span { display: flex; align-items: center; justify-content: center; gap: .5mm; color: var(--accent-dark); font-size: 7.4pt; }
 .product-a-v4 .a4-water-reference em { color: var(--accent-dark); font-style: normal; font-weight: 900; white-space: nowrap; }
+.product-a-v4 .a4-sprayer-photo { display: block; flex: 0 0 auto; width: 12mm; height: 19mm; overflow: hidden; background: white; }
+.product-a-v4 .a4-sprayer-photo img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .product-a-v4 .a4-water-bottle { display: block; flex: 0 0 auto; background: white; }
-.product-a-v4 .a4-water-bottle.small { position: relative; width: 6.6mm; height: 18mm; overflow: hidden; }
-.product-a-v4 .a4-water-bottle.small img { position: absolute; width: 22mm; height: auto; max-width: none; transform: translate(-7.8mm,-1.4mm); }
+.product-a-v4 .a4-water-bottle.small { width: 6.6mm; height: 18mm; }
+.product-a-v4 .a4-water-bottle.small img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .product-a-v4 .a4-water-bottle.five-liter { width: 18mm; height: 20mm; }
 .product-a-v4 .a4-water-bottle.five-liter img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .product-a-v4 .a4-weeds figure:nth-child(2) img { object-position: 50% 72%; transform: scale(1.08); }
@@ -409,16 +414,11 @@ body { display: flex; justify-content: center; padding: 16px; }
 .product-a-v4 .a4-measure-card > .a4-quarter-bottle { grid-row: 1 / 3; margin: 0 auto; }
 .product-a-v4 .a4-measure-card > strong { min-height: 0; color: var(--accent-dark); font-size: 8.7pt; line-height: 1.15; }
 .product-a-v4 .a4-measure-card > span:not(.a4-cap-ten):not(.a4-real-cup):not(.a4-quarter-bottle) { color: #505b5d; font-size: 7.6pt; line-height: 1.2; }
-.product-a-v4 .a4-cylinder-real { width: 9mm; height: 14mm; }
 .product-a-v4 .a4-cap-ten { width: 22mm; min-height: 17mm; }
 .product-a-v4 .a4-cap-ten img { width: 4.1mm; height: 4.1mm; }
 .product-a-v4 .a4-real-cup,
 .product-a-v4 .a4-quarter-bottle { width: 12mm; height: 17mm; }
-.product-a-v4 .a4-real-cup i,
-.product-a-v4 .a4-quarter-bottle i { left: 1.2mm; right: 1.2mm; height: 2mm; border: .65mm solid transparent; border-bottom-color: #c23227; border-radius: 50%; }
-.product-a-v4 .a4-real-cup i { bottom: 3.6mm; }
-.product-a-v4 .a4-quarter-bottle i { bottom: 2.8mm; }
-.product-a-v4 .a4-quarter-bottle em { right: -4mm; font-size: 5.5pt; }
+.product-a-v4 .a4-preferred-measure { background: color-mix(in srgb,var(--accent) 8%,white); }
 .product-a-v4 .a4-dose-guide { position: relative; padding-top: 5mm; }
 .product-a-v4 .a4-dose-guide > p { position: absolute; inset: 0 0 auto; padding: .8mm 1.5mm; border: 0; border-top: 1px solid var(--line); background: transparent; color: #585c55; font-size: 7.5pt; text-align: left; }
 .product-a-v4 .a4-dose-guide > div { padding: .7mm 1.2mm; border: 0; border-left: 1px solid var(--line); background: transparent; }
@@ -430,13 +430,17 @@ body { display: flex; justify-content: center; padding: 16px; }
 .product-a-v4 .a4-coverage { font-size: 12pt; }
 
 .product-a-v4 .a4-action-grid { grid-template-columns: 1fr 1.15fr 1.2fr; gap: 0; border-top: 1px solid #d9a099; border-bottom: 1px solid #d9a099; background: #fff7f5; }
-.product-a-v4 .a4-action-grid > article { min-height: 36.5mm; border: 0; border-right: 1px solid #e2c2bd; background: transparent; }
+.product-a-v4 .a4-action-grid > article { min-height: 32mm; border: 0; border-right: 1px solid #e2c2bd; background: transparent; }
 .product-a-v4 .a4-action-grid > article:last-child { border-right: 0; }
 .product-a-v4 .a4-action-grid h3 { font-size: 11pt; }
 .product-a-v4 .a4-action-grid h3 span { font-family: Arial, sans-serif; font-weight: 900; }
 .product-a-v4 .a4-cap-limit { font-size: 9.5pt; }
 .product-a-v4 .a4-season-once { margin: 2mm 0 0; color: #6c3029; font-size: 9pt; text-align: center; }
 .product-a-v4 .a4-season-once b { color: var(--danger); font-size: 15pt; }
+.product-a-v4 .a4-use-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1mm; margin-top: 1.4mm; text-align: center; }
+.product-a-v4 .a4-use-stats p { margin: 0; color: #6c3029; font-size: 7.2pt; line-height: 1.15; }
+.product-a-v4 .a4-use-stats p + p { border-left: 1px solid #d9a099; }
+.product-a-v4 .a4-use-stats b { display: block; margin-top: .4mm; color: var(--danger); font-size: 15pt; line-height: 1; }
 .product-a-v4 .a4-six-leaf { position: relative; display: grid; grid-template-columns: 17mm 1fr; align-items: center; gap: 1mm; margin-bottom: 1mm; color: #76251d; font-size: 8pt; line-height: 1.3; }
 .product-a-v4 .a4-six-leaf img { width: 16mm; height: 19mm; object-fit: contain; }
 .product-a-v4 .a4-six-leaf::after { content: "×"; position: absolute; left: 11.5mm; top: 0; width: 5mm; height: 5mm; display: grid; place-items: center; border-radius: 50%; background: var(--danger); color: white; font-family: Arial, sans-serif; font-size: 10pt; font-weight: 900; }
@@ -461,6 +465,20 @@ body { display: flex; justify-content: center; padding: 16px; }
 .product-a-v4 .a4-study-note { margin-top: .5mm; padding: .8mm 2mm; font-size: 7.3pt; }
 .product-a-v4 .category-band { margin-top: .5mm; }
 
+/* Product B/C v5: reuse Product A's approved information hierarchy. */
+.product-b-v5 .a4-target-evidence figure:nth-of-type(1) img { object-position: 50% 58%; transform: scale(1.08); }
+.product-b-v5 .a4-target-evidence figure:nth-of-type(2) img { object-position: 50% 48%; }
+.product-c-v5 .a4-target-evidence figure:nth-of-type(1) img { object-position: 48% 48%; transform: scale(1.2); }
+.product-c-v5 .a4-target-evidence figure:nth-of-type(2) img { object-position: 58% 52%; }
+.product-b-v5 .a4-action-grid > article,
+.product-c-v5 .a4-action-grid > article { min-height: 32mm; padding-top: 1.2mm; padding-bottom: 1.2mm; }
+.product-b-v5 .a4-cap-ten,
+.product-c-v5 .a4-cap-ten { justify-content: center; }
+.product-a-v4 .a4-stop-use { display: grid; gap: .8mm; margin-bottom: 1.2mm; padding: 2mm; border: 1mm solid #ad3225; background: #ffe1dc; color: #7e170f; text-align: center; }
+.product-a-v4 .a4-stop-use b { font-size: 10pt; }
+.product-a-v4 .a4-stop-use span { font-size: 7.6pt; font-weight: 900; }
+.product-a-v4 .a4-borer-late { display: grid; grid-template-columns: 22mm 1fr; align-items: center; gap: 1.5mm; margin-bottom: 1mm; color: #76251d; font-size: 7.8pt; line-height: 1.3; }
+.product-a-v4 .a4-borer-late img { width: 22mm; height: 17mm; object-fit: cover; object-position: center; }
 @page { size: A4 portrait; margin: 0; }
 
 @media print {
