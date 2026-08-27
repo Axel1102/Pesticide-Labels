@@ -44,6 +44,38 @@ button, select { font: inherit; }
 .use-answer strong { font-size: 30px; }
 .top-dose strong { margin-top: 3px; font-size: clamp(19px, 3.5vw, 29px); line-height: 1.25; }
 
+.product-switcher {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+.product-switcher > span { color: var(--muted); font-size: 13px; font-weight: 800; }
+.product-switcher > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.product-switcher button {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px;
+  border: 1px solid #aaa79e;
+  background: white;
+  color: var(--ink);
+  cursor: pointer;
+}
+.product-switcher button b { font-size: 23px; }
+.product-switcher button small { font-size: 13px; font-weight: 800; text-align: left; }
+.product-switcher button.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+}
+
 .product-header {
   display: flex;
   align-items: center;
@@ -90,9 +122,23 @@ select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in s
 .target-gallery figure > div { position: relative; aspect-ratio: 1 / .82; overflow: hidden; }
 .target-gallery img { object-fit: cover; }
 .target-gallery figcaption { padding: 9px 8px; font-size: 13px; font-weight: 800; text-align: center; }
+.target-gallery.single { grid-template-columns: minmax(190px, 1fr) 2fr; }
+.target-gallery.single figure > div { aspect-ratio: 1.45 / 1; }
+.target-signs {
+  grid-column: 1 / -1;
+  padding: 15px 17px;
+  border: 1px solid var(--line);
+  background: #f5f2e9;
+}
+.target-gallery.single .target-signs { grid-column: auto; }
+.target-signs > strong { color: var(--accent); font-size: 17px; }
+.target-signs ul, .target-details ul { margin: 10px 0 0; padding-left: 20px; line-height: 1.65; }
 .target-details { margin-top: 12px; }
 .target-details summary, .label-details summary { padding: 13px 0; cursor: pointer; font-weight: 800; }
 .target-details p { margin: 0; padding: 0 0 8px; line-height: 1.6; }
+.target-details .caution { margin-top: 10px; color: #7b3f32; font-weight: 700; }
+
+.label-dose { margin: -6px 0 16px; color: var(--muted); font-size: 14px; line-height: 1.55; }
 
 .dose-equation {
   display: grid;
@@ -145,11 +191,18 @@ footer { margin-top: 14px; padding: 12px; color: #6f665a; font-size: 11px; text-
   .use-answer, .top-dose { padding: 11px 13px; }
   .use-answer strong { font-size: 24px; }
   .top-dose strong { font-size: 17px; }
-  .product-header { margin-top: 0; padding: 18px 16px; }
+  .product-switcher { grid-template-columns: 1fr; margin-top: 0; padding: 12px 10px; }
+  .product-switcher > div { gap: 6px; }
+  .product-switcher button { grid-template-columns: 1fr; gap: 0; min-height: 62px; padding: 7px 4px; text-align: center; }
+  .product-switcher button small { font-size: 11px; text-align: center; }
+  .product-header { align-items: flex-start; margin-top: 0; padding: 18px 16px; }
+  .product-header h1 { font-size: 25px; line-height: 1.25; }
   .product-header > strong { font-size: 13px; }
   .question-card, .save-card { margin: 10px 10px 0; padding: 16px; }
   .question-grid, .dose-selects { grid-template-columns: 1fr; }
   .target-gallery { grid-template-columns: 1fr 1fr; }
+  .target-gallery.single { grid-template-columns: 1fr; }
+  .target-gallery.single .target-signs { grid-column: 1; }
   .dose-equation { grid-template-columns: 1fr; gap: 5px; padding: 15px; }
   .dose-equation b { line-height: .8; }
   .mix-card { grid-template-columns: 1fr; }
