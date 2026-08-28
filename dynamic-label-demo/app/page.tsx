@@ -40,7 +40,6 @@ const productSurveys: Record<string, ProductSurvey> = {
     situationQuestion: '田里的草现在是什么情况？',
     situationOptions: [
       { id: 'small', label: '杂草大多有2–4片叶，仍比较矮小', allowed: true, reason: '' },
-      { id: 'not-seen', label: '还没有看到杂草', allowed: false, reason: '还没有看到需要防治的杂草' },
       { id: 'tall', label: '杂草已经长高、成片', allowed: false, reason: '杂草已经超过标签规定的2–4叶期' },
     ],
   },
@@ -73,7 +72,6 @@ const productSurveys: Record<string, ProductSurvey> = {
     situationQuestion: '田里的虫现在是什么情况？',
     situationOptions: [
       { id: 'young', label: '刚见卵块或低龄幼虫，心叶有小孔', allowed: true, reason: '' },
-      { id: 'not-seen', label: '还没看到虫、虫粪或叶片小孔', allowed: false, reason: '还没有确认需要防治的玉米螟' },
       { id: 'boring', label: '幼虫已经大量钻进茎秆', allowed: false, reason: '幼虫已经超过标签规定的低龄期' },
     ],
   },
@@ -271,10 +269,8 @@ export default function Home() {
     context.fillStyle = product.accent;
     context.fillRect(0, 0, canvas.width, 280);
     context.fillStyle = '#fff';
-    context.font = '700 38px system-ui, sans-serif';
-    context.fillText(`实验农药 ${product.code} · ${product.shortName}`, 80, 82);
     context.font = '800 58px system-ui, sans-serif';
-    drawWrappedText(context, product.productName, 80, 165, 920, 68);
+    drawWrappedText(context, product.productName, 80, 110, 920, 68);
     context.fillStyle = '#1f241d';
     context.font = '800 60px system-ui, sans-serif';
     context.fillText(`喷 ${formatNumber(area)} 亩`, 80, 400);
@@ -316,11 +312,11 @@ export default function Home() {
   return (
     <main className="app-shell" style={themeStyle}>
       <section className={`sticky-result ${canUse ? 'usable' : 'blocked'}`} aria-live="polite">
-        <div className="use-answer"><span>根据当前选择</span><strong>{canUse ? '可以用' : '先不要用'}</strong></div>
+        <div className="use-answer"><strong>{canUse ? '可以用' : '先不要用'}</strong></div>
         {canUse ? (
-          <div className="top-dose"><span>实验农药 {product.code} · 喷 {formatNumber(area)} 亩</span><strong>{equation}</strong></div>
+          <div className="top-dose"><strong>喷{formatNumber(area)}亩：{equation}</strong></div>
         ) : (
-          <div className="top-dose"><span>先核对下面的信息</span><strong>{blockers[0]}</strong></div>
+          <div className="top-dose"><strong>{blockers[0]}</strong></div>
         )}
       </section>
 
@@ -334,12 +330,11 @@ export default function Home() {
       </nav>
 
       <header className="product-header">
-        <div><span>PRODUCT {product.code} · {product.crop} · {selectedTarget.label}</span><h1>{product.productName}</h1></div>
-        <strong>本季最多{product.limits.maxUsesPerSeason}次</strong>
+        <h1>{product.productName}</h1>
       </header>
 
       <section className="question-card situation-card">
-        <div className="section-heading"><span>第一步</span><h2>看看这次能不能用</h2></div>
+        <div className="section-heading"><h2>判断适用性</h2></div>
         <div className="question-grid">
           <label><span>种的是什么？</span><select value={cropChoice} onChange={(event) => setCropChoice(event.target.value)}>
             {[product.crop, ...cropNames.filter((item) => item !== product.crop)].map((item) => <option key={item} value={item}>{item}</option>)}
@@ -364,13 +359,8 @@ export default function Home() {
           ) : null}
         </div>
 
-        <div className="keyword-row">
-          <span>选择后会自动打开图片，也可点击关键词重看：</span>
-          <button type="button" className="keyword-trigger" onClick={() => setDetailModal('target')}>{selectedTarget.label}</button>
-        </div>
-
         <fieldset className="medicine-history">
-          <legend>这一茬之前还用过哪些药？（可多选，用于混配判断）</legend>
+          <legend>这一茬之前还用过哪些药？（可多选）</legend>
           <label className="check-option"><input type="checkbox" checked={previousMedicines.length === 0} onChange={() => togglePreviousMedicine('none')} /><span>还没用过其他药</span></label>
           {previousMedicineOptions.map((item) => (
             <label className="check-option" key={item.value}><input type="checkbox" checked={previousMedicines.includes(item.label)} onChange={() => togglePreviousMedicine(item.label)} /><span>{item.label}</span></label>
@@ -379,8 +369,7 @@ export default function Home() {
       </section>
 
       <section className="question-card dose-card">
-        <div className="section-heading"><span>第二步</span><h2>算这次需要多少水和药</h2></div>
-        <p className="label-dose">每亩按一桶15升喷雾器的水量换算；药量优先显示为几盖、几杯或几瓶。</p>
+        <div className="section-heading"><h2>计算用量</h2></div>
         <div className="dose-selects">
           <label><span>这次需要喷多少亩？</span><select value={area} onChange={(event) => setArea(Number(event.target.value))}>{areaOptions.map((item) => <option key={item} value={item}>{item}亩</option>)}</select></label>
           <label><span>准备用什么量药？</span><select value={selectedMeasure.id} onChange={(event) => setMeasureId(event.target.value)}>
@@ -389,15 +378,15 @@ export default function Home() {
         </div>
 
         <div className="dose-visual" aria-label={equation}>
-          <figure><div className="visual-image water-image"><Image src="/images/sprayer-15l-real-cropped.jpg" alt="15升背负式喷雾器" width={220} height={220} /><b>× {formatNumber(area)}</b></div><figcaption><strong>{formatNumber(waterJin)}斤水</strong><button type="button" className="keyword-trigger" onClick={() => setDetailModal('sprayer')}>15升喷雾器</button><span>点击关键词查看容量说明</span></figcaption></figure>
+          <figure><div className="visual-image water-image"><Image src="/images/sprayer-15l-real-cropped.jpg" alt="15升背负式喷雾器" width={220} height={220} /><b>× {formatNumber(area)}</b></div><figcaption><strong>{formatNumber(waterJin)}斤水</strong><button type="button" className="keyword-trigger" onClick={() => setDetailModal('sprayer')}>15升喷雾器</button></figcaption></figure>
           <b className="visual-operator">＋</b>
-          <figure><div className="visual-image measure-image"><Image src={measureImage} alt={measureName} width={220} height={220} /><b>× {formatNumber(visualMeasureCount)}</b></div><figcaption><strong>{measureResult}</strong><button type="button" className="keyword-trigger" onClick={() => setDetailModal('measure')}>{measureName}</button><span>点击关键词查看怎么量</span></figcaption></figure>
+          <figure><div className="visual-image measure-image"><Image src={measureImage} alt={measureName} width={220} height={220} /><b>× {formatNumber(visualMeasureCount)}</b></div><figcaption><strong>{measureResult}</strong><button type="button" className="keyword-trigger" onClick={() => setDetailModal('measure')}>{measureName}</button></figcaption></figure>
         </div>
         <div className="dose-equation"><strong>{formatNumber(waterJin)}斤水</strong><b>＋</b><strong>{measureResult}</strong></div>
       </section>
 
       <section className="save-card">
-        <div className="save-preview"><span>实验农药 {product.code} · {product.shortName}</span><h2>{product.productName}</h2>
+        <div className="save-preview"><h2>{product.productName}</h2>
           {canUse ? <strong>喷{formatNumber(area)}亩：{formatNumber(waterJin)}斤水＋{measureResult}</strong> : <strong className="stop">当前选择需要先核对，暂不配药</strong>}
           <ul><li>{product.applicationTiming.recommended}</li><li>{product.dosage.applicationMethod}</li><li>本季最多{product.limits.maxUsesPerSeason}次{product.limits.minimumIntervalDays ? `，至少间隔${product.limits.minimumIntervalDays}天` : ''}</li><li>之前用药：{previousMedicineText}</li><li>{product.fullLabel.precautions[0]}</li></ul>
         </div>
