@@ -4,7 +4,7 @@
   "disclaimer": "所有产品、成分、登记信息、剂量和混配信息均为虚构，仅用于标签实验，禁止用于真实农业生产。",
   "regionProfile": {
     "name": "陕西关中小麦—玉米生产场景",
-    "description": "通俗名称和典型对象参考陕西省农业农村厅公开农技资料；图片使用可核验来源的真实照片。",
+    "description": "通俗名称和典型对象参考陕西省农业农村厅公开农技资料；真实照片标注来源，补充视角标注为AI生成实验示意图。",
     "references": [
       {
         "label": "临潼：夏玉米田后化除技术要点",
@@ -22,8 +22,16 @@
   },
   "mixingContainers": [
     {
+      "id": "mineral-water-5l",
+      "name": "农夫山泉5升矿泉水桶（可装十斤水）",
+      "familiarName": "一桶十斤水",
+      "capacityLiters": 5,
+      "kind": "bucket",
+      "note": "先确认桶身标注为5升，只用来量清水；装过药液后不得再装饮用水。"
+    },
+    {
       "id": "bucket-10",
-      "name": "10 L 常用水桶",
+      "name": "十升水桶（可装二十斤水）",
       "familiarName": "半桶左右",
       "capacityLiters": 10,
       "kind": "bucket",
@@ -31,7 +39,7 @@
     },
     {
       "id": "sprayer-15",
-      "name": "15 L 背负式喷雾器",
+      "name": "喷雾器（十五升，可装三十斤水）",
       "familiarName": "常见喷雾器",
       "capacityLiters": 15,
       "kind": "sprayer",
@@ -39,7 +47,7 @@
     },
     {
       "id": "sprayer-16",
-      "name": "16 L 背负式喷雾器",
+      "name": "喷雾器（十六升，可装三十二斤水）",
       "familiarName": "大号喷雾器",
       "capacityLiters": 16,
       "kind": "sprayer",
@@ -47,7 +55,7 @@
     },
     {
       "id": "bucket-20",
-      "name": "20 L 常用大桶",
+      "name": "二十升大水桶（可装四十斤水）",
       "familiarName": "一大桶水",
       "capacityLiters": 20,
       "kind": "bucket",
@@ -59,7 +67,7 @@
       "familiarName": "输入实际容量",
       "capacityLiters": 15,
       "kind": "custom",
-      "note": "建议先用标准量具量出容器能装多少升水。"
+      "note": "建议先用标准量具量出容器能装多少升水，并按一升水约两斤换算。"
     }
   ],
   "measuringContainers": [
@@ -80,15 +88,6 @@
       "kind": "cylinder",
       "accuracy": "看量筒刻度红线",
       "note": "读取药液最低点对应的毫升刻度。"
-    },
-    {
-      "id": "cup-50",
-      "name": "带刻度小量杯",
-      "familiarName": "小量杯",
-      "capacityMl": 50,
-      "kind": "cup",
-      "accuracy": "看量杯刻度红线",
-      "note": "超过一杯时按整杯数和最后一杯刻度分次量取。"
     },
     {
       "id": "mineral-bottle-550",
@@ -150,7 +149,7 @@
         "regionalNote": "陕西临潼公开农技资料将狗尾草、马唐、牛筋草和稗草列为当地夏玉米田常见杂草。",
         "summary": "这类草叶子细长，和玉米叶子有些像；狗尾草长大后会抽出毛茸茸的穗。",
         "lookFor": ["叶片细长，叶脉大致平行", "常从玉米行间成簇长出", "狗尾草长大后会出现毛茸茸的狗尾状穗"],
-        "caution": "幼苗期可能和玉米叶片相似，不确定时不要只凭一张图片判断。"
+        "caution": "幼苗期叶片细长，还没有长出狗尾状穗。"
         ,"imageCredit": "真实照片：Petr Filippov / Wikimedia Commons，CC BY 3.0",
         "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Setaria_viridis.JPG",
         "regionalSourceUrl": "https://nynct.shaanxi.gov.cn/zt/snzbxx/zbjs/202506/t20250619_3533906.html"
@@ -161,14 +160,14 @@
         "options": ["玉米3-5叶期、杂草2-4叶期", "玉米6叶期及以后", "小麦生长期"]
       },
       "dosage": {
-        "standardLabel": "每15 L水20–30 mL",
+        "standardLabel": "每15 L（30斤）水20–30 mL",
         "tankLiters": 15,
         "minimumAmountMl": 20,
         "recommendedAmountMl": 25,
         "adjustedAmountMl": 30,
         "maximumAmountMl": 30,
         "bottleVolumeMl": 200,
-        "applicationMethod": "对杂草茎叶均匀喷雾，避开玉米心叶"
+        "applicationMethod": "对杂草叶片和茎均匀喷雾，避开玉米心叶"
       },
       "limits": {
         "maxUsesPerSeason": 1,
@@ -188,13 +187,13 @@
       },
       "problemGuidance": {
         "trigger": "杂草较多或效果不均",
-        "do": ["确认玉米和杂草是否仍在标签叶期", "检查喷雾覆盖是否均匀、是否发生药液漂移", "本季尚未使用时，可把每15 L用量从一般用量25 mL适当上调到30 mL"],
-        "doNot": ["每15 L不得超过30 mL", "本季最多1次，不得补喷"]
+        "do": ["确认玉米和杂草是否仍在标签叶期", "检查喷雾覆盖是否均匀、是否发生药液漂移", "本季尚未使用时，可把每15 L（30斤）水的用量从一般用量25 mL适当上调到30 mL"],
+        "doNot": ["每15 L（30斤）水不得超过30 mL", "本季最多1次，不得补喷"]
       },
       "fullLabel": {
-        "performance": "选择性苗后除草剂，药剂经杂草茎叶吸收后抑制其生长。",
-        "technicalRequirements": ["于玉米3–5叶期、杂草2–4叶期施药", "每15 L用量20–30 mL，一般用量25 mL", "每季最多使用1次", "大风天或预计1小时内降雨时请勿施药"],
-        "precautions": ["不得用于小麦田", "避免漂移至邻近敏感作物", "做好个人防护并避免污染水体"]
+        "performance": "杂草长出后使用，药液由杂草叶片和茎吸收并抑制其生长。",
+        "technicalRequirements": ["于玉米3–5叶期、杂草2–4叶期施药", "每15 L（30斤）水用20–30 mL，一般用量25 mL", "每季最多使用1次", "大风天或预计1小时内降雨时请勿施药"],
+        "precautions": ["本产品不适用于小麦", "药液不要飘到旁边其他作物上", "做好个人防护，不要污染河沟和池塘"]
       }
     },
     {
@@ -219,7 +218,7 @@
         "regionalNote": "陕西兴平2025年农技资料专门提示小麦白粉病，其最直观特征就是麦叶表面的白色粉状斑。",
         "summary": "发病早期，麦叶表面会出现一小块一小块的白色粉状斑，随后可能连成片。",
         "lookFor": ["白斑主要附着在叶片表面", "用眼看像面粉或白灰落在叶子上", "严重时叶片发黄、变干"],
-        "caution": "泥点、灰尘和药液残留也可能发白，应结合斑块是否继续扩大来判断。"
+        "caution": "白斑呈粉状，常逐渐扩大并连成片。"
         ,"imageCredit": "真实照片：Agronom / Wikimedia Commons，CC BY-SA 4.0",
         "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Blumeria_graminis_on_winter_wheat.JPG",
         "regionalSourceUrl": "https://nynct.shaanxi.gov.cn/zt/snzbxx/zbjs/202503/t20250320_3464501.html"
@@ -230,7 +229,7 @@
         "options": ["发病前或发病初期", "病害严重后期", "小麦收获前10天"]
       },
       "dosage": {
-        "standardLabel": "每15 L水30–60 mL",
+        "standardLabel": "每15 L（30斤）水30–60 mL",
         "tankLiters": 15,
         "minimumAmountMl": 30,
         "recommendedAmountMl": 50,
@@ -257,13 +256,13 @@
       },
       "problemGuidance": {
         "trigger": "上一次药效明显下降",
-        "do": ["检查本季已经使用的次数和喷雾覆盖", "可把每15 L用量从一般用量50 mL适当上调到55 mL", "需要再次施用时至少间隔7天，并轮换作用方式"],
-        "doNot": ["每15 L不得超过60 mL", "本季不得超过2次"]
+        "do": ["检查本季已经使用的次数和喷雾覆盖", "可把每15 L（30斤）水的用量从一般用量50 mL适当上调到55 mL", "需要再次施用时至少间隔7天，并轮换作用方式"],
+        "doNot": ["每15 L（30斤）水不得超过60 mL", "本季不得超过2次"]
       },
       "fullLabel": {
-        "performance": "内吸性杀菌剂，具有预防和治疗作用，可用于防治小麦白粉病。",
-        "technicalRequirements": ["于发病前或发病初期施药", "每15 L用量30–60 mL，一般用量50 mL", "间隔7-10天施药1次", "每季最多使用2次，安全间隔期20天"],
-        "precautions": ["不能与含铜制剂混用", "蜜源作物花期及水体附近禁用", "做好个人防护并避免污染水体"]
+        "performance": "药液可进入小麦植株，能预防和防治小麦白粉病。",
+        "technicalRequirements": ["在发病前或刚出现病斑时施药", "每15 L（30斤）水用30–60 mL，一般用量50 mL", "两次用药间隔7–10天", "每季最多使用2次，收获前20天停止使用"],
+        "precautions": ["不能与含铜制剂混用", "作物开花、蜜蜂活动时，以及河沟和池塘附近不能用", "做好个人防护，不要污染河沟和池塘"]
       }
     },
     {
@@ -288,18 +287,18 @@
         "regionalNote": "陕西咸阳农技资料将玉米螟列为玉米苗期主要防治对象；田间常叫钻心虫。",
         "summary": "幼虫较小时先在叶片和心叶附近取食，长大后会钻进茎秆，越晚发现越难处理。",
         "lookFor": ["嫩叶上出现一排排针孔状小洞", "心叶附近可能看到虫粪或碎屑", "幼虫身体偏浅色，头部颜色较深"],
-        "caution": "图中为低龄幼虫示意；已经钻入茎秆的虫通常不容易直接看到。"
+        "caution": "幼虫身体偏浅色，头部颜色较深。"
         ,"imageCredit": "真实照片：Kembangraps / Wikimedia Commons，CC BY-SA 3.0",
         "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:O_furnacalis_1.JPG",
         "regionalSourceUrl": "https://nynct.shaanxi.gov.cn/zt/snzbxx/zbjs/202506/t20250606_3528964.html"
       },
       "distractorTargets": ["玉米蚜虫", "狗尾草"],
       "applicationTiming": {
-        "recommended": "卵孵化盛期至低龄幼虫期",
-        "options": ["卵孵化盛期至低龄幼虫期", "高龄幼虫大量钻蛀后", "玉米收获前7天"]
+        "recommended": "虫卵集中孵化、幼虫还小时",
+        "options": ["虫卵集中孵化、幼虫还小时", "幼虫长大并大量钻进茎秆后", "玉米收获前7天"]
       },
       "dosage": {
-        "standardLabel": "每15 L水40–60 mL",
+        "standardLabel": "每15 L（30斤）水40–60 mL",
         "tankLiters": 15,
         "minimumAmountMl": 40,
         "recommendedAmountMl": 50,
@@ -326,13 +325,13 @@
       },
       "problemGuidance": {
         "trigger": "上一次防治效果明显下降",
-        "do": ["检查幼虫龄期、心叶覆盖和本季使用次数", "可把每15 L用量从推荐中值50 mL适当上调到55 mL", "需要再次施用时至少间隔7天，并轮换作用方式"],
-        "doNot": ["每15 L不得超过60 mL", "本季不得超过3次"]
+        "do": ["检查幼虫龄期、心叶覆盖和本季使用次数", "可把每15 L（30斤）水的用量从一般用量50 mL适当上调到55 mL", "需要再次施用时至少间隔7天，并轮换作用方式"],
+        "doNot": ["每15 L（30斤）水不得超过60 mL", "本季不得超过3次"]
       },
       "fullLabel": {
-        "performance": "具有触杀和胃毒作用的杀虫剂，可用于防治玉米螟低龄幼虫。",
-        "technicalRequirements": ["于卵孵化盛期至低龄幼虫期施药", "每15 L用量40–60 mL，推荐中值50 mL", "间隔7-10天施药1次", "每季最多使用3次，安全间隔期14天"],
-        "precautions": ["不能与碱性药剂混用", "蜜源作物花期、桑园及水体附近禁用", "做好个人防护并避免污染水体"]
+        "performance": "药液接触虫体或被害虫吃下后起作用，用于防治还没有钻入茎秆的玉米螟幼虫。",
+        "technicalRequirements": ["在虫卵集中孵化、幼虫还小时施药", "每15 L（30斤）水用40–60 mL，一般用量50 mL", "两次用药间隔7–10天", "每季最多使用3次，收获前14天停止使用"],
+        "precautions": ["不能与碱性药剂混用", "作物开花、蜜蜂活动时，以及桑园、河沟和池塘附近不能用", "做好个人防护，不要污染河沟和池塘"]
       }
     }
   ]
