@@ -47,7 +47,11 @@ export default defineConfig(async () => {
   return {
     css: { postcss: { plugins: [tailwindcss()] } },
     server: {
-      allowedHosts: ['generally-square-elk.ngrok-free.app'],
+      allowedHosts: [
+        'generally-square-elk.ngrok-free.app',
+        'mammoth-key-rhino.ngrok-free.app',
+        '.lhr.life',
+      ],
       ...(isCodexSeatbeltSandbox
         ? { watch: { useFsEvents: false, usePolling: true } }
         : {}),

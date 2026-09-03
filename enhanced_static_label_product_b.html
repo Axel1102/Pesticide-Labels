@@ -4,107 +4,44 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Product B - 增强静态标签</title>
   <link rel="stylesheet" href="enhanced_static_label_common.css">
-  <style>:root { --accent:#377748; --accent-dark:#245632; --accent-soft:#eef6ef; }</style>
+  <style>:root { --accent:#56745e; --accent-dark:#3f5b48; --accent-soft:#f1f4f0; }</style>
 </head>
 <body>
-  <article class="sheet product-a-v4 product-b-v5" aria-label="Product B 增强静态标签">
-    <header class="a4-identity">
-      <div><b>小麦杀菌剂</b><h1>25% 麦序霉素·穗护酮</h1><p>总有效成分含量：25%　麦序霉素15%　穗护酮10%　剂型：悬浮剂　低毒</p></div>
+  <article class="sheet reference-label" aria-label="Product B 增强静态标签">
+    <header class="ref-hero">
+      <div class="ref-title-stack"><div class="ref-category"><h1>小麦杀菌剂</h1><p>适用作物 <b>小麦</b>　防治对象 <b>小麦白粉病</b></p></div><div class="ref-product"><h2>25% 麦序霉素·穗护酮</h2><p>总有效成分含量：25%　麦序霉素15%　穗护酮10%</p><p class="ref-form-line"><span>剂型：</span><b>悬浮剂　低毒</b></p></div></div>
+      <div class="ref-target-visuals two"><figure><img src="dynamic-label-demo/public/images/target-wheat-powdery-mildew-real.jpg" alt="小麦白粉病叶片"><figcaption>小麦白粉病</figcaption></figure><figure><img src="dynamic-label-demo/public/images/target-wheat-powdery-mildew.webp" alt="小麦白粉病植株"><figcaption>叶片出现白色霉斑</figcaption></figure></div>
     </header>
-
-    <section class="a4-section a4-target-section">
-      <div class="a4-target-line">
-        <span><b>适用作物</b><strong>小麦</strong></span>
-        <span><b>防治对象</b><em>小麦白粉病</em></span>
+    <div class="ref-main-head"><span>使用指南</span><span>半亩用量</span></div>
+    <section class="ref-main">
+      <div class="ref-guide">
+        <div class="ref-specific-use"><b class="ref-period-label"><span>✓</span>适用时期</b><strong>病害发生前或发病初期开始使用</strong><b>施药位置</b><div class="ref-spray-location"><img src="dynamic-label-demo/public/images/operation-spray-wheat-mono-v3.png" alt="喷小麦的茎和叶"><strong>喷小麦的茎和叶</strong></div></div>
+        <div class="ref-common-guide"><h3>配药步骤</h3><div class="ref-common-steps"><span><img src="dynamic-label-demo/public/images/operation-shake-mono-v3.png" alt="充分摇匀"><b>1　充分摇匀</b></span><span><img src="dynamic-label-demo/public/images/operation-half-water-mono-v3.png" alt="先加一半清水"><b>2　先加一半清水</b></span><span><img src="dynamic-label-demo/public/images/operation-add-medicine-mono-v3.png" alt="加入量好的药并搅匀"><b>3　加药并搅匀</b></span><span><img src="dynamic-label-demo/public/images/operation-fill-water-mono-v3.png" alt="补水到30斤"><b>4　补水到30斤</b></span><span><img src="dynamic-label-demo/public/images/operation-use-within-12h-mono-v3.png" alt="尽快用完"><b>5　不超过12小时用完</b></span></div></div>
       </div>
-      <div class="a4-target-evidence">
-        <div class="a4-feature-list" aria-label="小麦白粉病的三个识别特征"><span><b>①</b>叶面出现白色粉斑</span><span><b>②</b>粉斑扩大、逐渐连片</span><span><b>③</b>严重时叶片变黄早枯</span></div>
-        <figure><img src="dynamic-label-demo/public/images/target-wheat-powdery-mildew-real.jpg" alt="田间小麦白粉病"><figcaption>田间白色粉斑</figcaption></figure>
-        <figure><img src="dynamic-label-demo/public/images/target-wheat-powdery-mildew.webp" alt="小麦叶片白粉病特写"><figcaption>叶面粉斑特写</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="a4-section">
-      <h2>用量</h2>
-      <div class="a4-dose">
-        <div class="a4-primary-dose" aria-label="每30斤水加入1两药液">
-          <div class="a4-water-dose"><span>每桶用水</span><strong>30斤水</strong><small>（15升）</small>
-            <div class="a4-water-reference">
-              <span><i class="a4-sprayer-photo"><img src="dynamic-label-demo/public/images/sprayer-15l-real-cropped.jpg" alt="15升背负式电动喷雾器实物图"></i><em>15升喷雾器加满</em></span>
-              <span><i class="a4-water-bottle five-liter"><img src="dynamic-label-demo/public/images/nongfu-water-bottle-5l-cutout.png" alt="完整5升装大水瓶"></i><em>5升大矿泉水瓶 × 3</em></span>
-            </div>
-          </div>
-          <b>＋</b>
-          <div><span>加入本品</span><strong>1两药液</strong><small>（约50毫升）</small></div>
+      <div class="ref-dose">
+        <div class="ref-dose-primary">
+          <div class="ref-dose-side water"><strong>30斤水</strong><small>15升</small><div class="ref-dose-list"><span><img src="dynamic-label-demo/public/images/sprayer-15l-real-cropped.jpg" alt="15升喷雾器"><b>15升喷雾器加满</b></span><span><img src="dynamic-label-demo/public/images/nongfu-water-bottle-5l-cutout.png" alt="5升大矿泉水瓶"><b>5升大矿泉水瓶 × 3</b></span></div></div>
+          <b class="ref-plus">＋</b>
+          <div class="ref-dose-side medicine"><strong>1两药液</strong><small>约50毫升</small><div class="ref-dose-list"><span><img src="dynamic-label-demo/public/images/nongfu-cap-photo-cutout.png" alt="普通瓶盖"><b>普通瓶盖约10盖</b></span><span><img src="dynamic-label-demo/public/images/paper-cup-one-quarter-marked.png" alt="一次性纸杯"><b>一次性纸杯约1/4杯</b></span><span><img src="dynamic-label-demo/public/images/pesticide-bottle-one-quarter-marked.png" alt="本产品瓶"><b>本产品整瓶约1/4瓶</b></span></div></div>
         </div>
-        <p class="a4-mixing-line"><b>使用指南：</b>先加一半水；加入1两药液并搅匀；补足到30斤水；对小麦茎叶均匀喷施。</p>
-        <div class="a4-measure-aids">
-          <p><b>没有测量工具时，可以参考以下辅助方法确定用量</b></p>
-          <div class="a4-measure-grid">
-            <div class="a4-measure-card a4-preferred-measure"><span class="a4-cap-ten"><img src="dynamic-label-demo/public/images/nongfu-cap-photo-cutout.png" alt=""><img src="dynamic-label-demo/public/images/nongfu-cap-photo-cutout.png" alt=""><img src="dynamic-label-demo/public/images/nongfu-cap-photo-cutout.png" alt=""><img src="dynamic-label-demo/public/images/nongfu-cap-photo-cutout.png" alt=""><img src="dynamic-label-demo/public/images/nongfu-cap-photo-cutout.png" alt=""><img src="dynamic-label-demo/public/images/nongfu-cap-photo-cutout.png" alt=""><img src="dynamic-label-demo/public/images/nongfu-cap-photo-cutout.png" alt=""><img src="dynamic-label-demo/public/images/nongfu-cap-photo-cutout.png" alt=""><img src="dynamic-label-demo/public/images/nongfu-cap-photo-cutout.png" alt=""><img src="dynamic-label-demo/public/images/nongfu-cap-photo-cutout.png" alt=""></span><strong>普通瓶盖（农夫山泉等品牌）</strong><span>约 10 盖<br>（每盖约5毫升）</span></div>
-            <div class="a4-measure-card"><span class="a4-real-cup"><img src="dynamic-label-demo/public/images/paper-cup-one-quarter-marked.png" alt="标出四分之一刻度的200毫升纸杯"></span><strong>一次性纸杯（每杯约200毫升）</strong><span>约 1/4 杯</span></div>
-            <div class="a4-measure-card"><span class="a4-quarter-bottle"><img src="dynamic-label-demo/public/images/pesticide-bottle-one-quarter-marked.png" alt="标出四分之一刻度的本产品瓶"></span><strong>本产品整瓶</strong><span>约 1/4 瓶<br>（本瓶200毫升）</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="a4-coverage">上述一桶药液可均匀喷施约半亩小麦；一亩需配两桶，共60斤水</div>
-      <div class="a4-dose-guide">
-        <p>剂量调整原则</p>
-        <div><b>发病前或病斑很少时</b><strong>约六钱</strong><span>普通瓶盖约6盖</span></div>
-        <div class="normal"><b>一般情况</b><strong>1 两</strong><span>普通瓶盖约10盖</span></div>
-        <div><b>上次效果明显下降、仍在适用时期时</b><strong>约一两一钱</strong><span>普通瓶盖约11盖</span></div>
+        <p class="ref-dose-adjust-title">剂量调整</p>
+        <div class="ref-dose-levels"><div><b>发病前或病斑很少</b><strong>约六钱</strong><span>瓶盖约6盖</span></div><div><b>一般情况</b><strong>1两</strong><span>瓶盖约10盖</span></div><div><b>上次效果下降</b><strong>约一两一钱</strong><span>瓶盖约11盖</span></div></div>
       </div>
     </section>
-
-    <section class="a4-section">
-      <div class="a4-general-use">
-        <b>施用提醒</b>
-        <span><i class="a4-reminder-icon shake"><img src="dynamic-label-demo/public/images/application-reminder-icons.png" alt="摇匀图标"></i><strong>使用前充分摇匀</strong></span>
-        <span><i class="a4-reminder-icon spray"><img src="dynamic-label-demo/public/images/application-reminder-icons.png" alt="喷施图标"></i><strong>对小麦茎叶喷匀</strong></span>
-        <span><i class="a4-reminder-icon overnight"><img src="dynamic-label-demo/public/images/application-reminder-icons.png" alt="药液放置不要超过12小时图标"></i><strong>尽快用完，放置不要超过12小时</strong></span>
-      </div>
-      <h2>本产品特别注意</h2>
-      <div class="a4-action-grid">
-        <article class="a4-action-dont">
-          <h3><span>!</span>用量限制</h3>
-          <div class="a4-cap-limit"><b>每 30 斤水最多一两二钱药液</b><span>（约60毫升），不能超过！</span></div>
-          <div class="a4-use-stats"><p>一季最多使用<b>2次</b></p><p>再次使用至少间隔<b>7天</b></p></div>
-        </article>
-        <article class="a4-action-dont">
-          <h3><span>×</span>用法禁忌</h3>
-          <div class="a4-stop-use"><b>收获前 20 天内不要用</b></div>
-          <ul>
-            <li>病害已到严重后期时不要自行加浓。</li>
-            <li>蜜源作物花期及水体附近不要使用。</li>
-          </ul>
-        </article>
-        <article class="a4-action-mix">
-          <h3><span>×</span>混合使用禁忌</h3>
-          <div class="a4-mix-ban">
-            <div class="a4-mix-products"><figure><img src="dynamic-label-demo/public/images/bordeaux-mixture-product-real.jpg" alt="波尔多液真实包装"><figcaption>波尔多液</figcaption></figure><b>×</b><figure><img src="dynamic-label-demo/public/images/copper-hydroxide-product-real.jpg" alt="氢氧化铜真实包装"><figcaption>氢氧化铜</figcaption></figure></div>
-            <p>不能与含铜制剂混用，例如波尔多液、氢氧化铜制剂。</p>
-          </div>
-        </article>
-      </div>
-      <div class="a4-danger-line">违反以上要求可能造成防治失效、作物受损或人员中毒！</div>
+    <h2 class="ref-section-title">注意事项</h2>
+    <section class="ref-rules">
+      <article class="ref-rule"><h3>用量与次数限制</h3><p class="ref-rule-primary">每30斤水最多一两一钱药液<br>（约55毫升）</p><p class="ref-interval-rule">病害发展快：隔 <b>7</b> 天<br>病情稳定：隔 <b>10</b> 天</p><p class="ref-season-max">一季最多使用 <b>2</b> 次</p></article>
+      <article class="ref-rule"><h3>用法禁忌</h3><ul class="ref-prohibition-list"><li>收获前<strong class="ref-key-number">20天内</strong>不要用</li><li><strong>鱼塘、河塘等水体附近</strong>禁用。</li><li>避开<strong>蜜源作物花期</strong>和<strong>桑园附近</strong>。</li></ul></article>
+      <article class="ref-rule"><h3>混合使用禁忌</h3><div class="ref-mix-products"><figure><img src="dynamic-label-demo/public/images/bordeaux-mixture-product-real.jpg" alt="波尔多液"><figcaption>波尔多液</figcaption></figure><figure><img src="dynamic-label-demo/public/images/copper-hydroxide-product-real.jpg" alt="氢氧化铜"><figcaption>氢氧化铜</figcaption></figure></div><p class="ref-mix-text">不能与含铜制剂混用。</p></article>
     </section>
-
-    <section class="a4-label-info">
-      <article class="a4-info-wide"><h3>注意事项</h3><ol>
-        <li>配药和施药时穿长袖防护服、长裤和胶靴，佩戴防护手套、口罩和护目镜。</li>
-        <li>施药期间不得饮水、进食或吸烟；施药后及时清洗身体、防护用具和工作服。</li>
-        <li>药液、清洗液和废弃包装不得污染水域和土壤，禁止在水体中清洗施药器具。</li>
-        <li>未用完的制剂放回原包装密封保存，不得转装入饮料或食品容器。</li>
-        <li>使用过的包装妥善收集，不得重复使用、改作其他用途或随意丢弃。</li>
-        <li>儿童、孕妇及哺乳期妇女不得接触本品。</li>
-      </ol></article>
-      <article><h3>中毒急救措施</h3><p>使用中或使用后如感觉不适，应立即停止工作并携带本标签就医。皮肤接触用大量清水和肥皂冲洗；眼睛溅入用流动清水冲洗至少15分钟；吸入时转移到空气流通处；误食时立即漱口，不得自行引吐。无专用解毒剂，对症治疗。</p></article>
-      <article><h3>储存和运输方法</h3><p>加锁存放于阴凉、干燥、通风、防雨处，远离火源和热源。置于儿童、无关人员及动物接触不到之处，不得与食品、饮料、粮食、种子和饲料混合储运。运输时防止日晒、雨淋、倾倒和包装破损。</p></article>
-      <article class="a4-info-wide a4-records"><h3>登记和生产信息</h3><p><b>实验虚构登记号：</b>EXP-PD-B0823　<b>产品标准号：</b>LAB/FIC-B-2026　<b>生产许可证号：</b>EXP-XK-B0823<br><b>净含量：</b>200毫升　<b>生产日期及批号：</b>见封口　<b>质量保证期：</b>2年<br><b>生产者：</b>原野标签研究实验室（虚构机构）　<b>电话：</b>000-00000000（不可拨打）</p></article>
-      <div class="a4-pictograms"><span>穿防护服</span><span>佩戴口罩</span><span>戴护目镜</span><span>佩戴手套</span><span>施药后清洗</span><span>远离儿童</span><span>勿污染水体</span></div>
-    </section>
-    <div class="a4-study-note">实验用虚构农药标签　所有产品、成分、登记信息及使用数据均为虚构　禁止用于真实农业生产</div>
-    <footer class="category-band">杀菌剂</footer>
+    <p class="ref-danger">⚠️　违反以上要求可能造成防治失效、作物受损或人员中毒！　⚠️</p>
+    <ol class="ref-notes"><li>配药和施药时穿长袖防护服、长裤和胶靴，佩戴防护手套、口罩和护目镜。</li><li>施药时不得饮水、进食或吸烟；施药后清洗身体、防护用具和工作服。</li><li>药液、清洗液和包装不得污染水土，禁止在水体中清洗施药器具。</li><li>余药密封留在原包装，不得转装入饮料或食品容器。</li><li>包装妥善收集，不得重复使用或随意丢弃。</li><li>儿童、孕妇及哺乳期妇女不得接触本品。</li></ol>
+    <section class="ref-emergency"><h3>中毒急救措施</h3><p>如感觉不适，立即停止工作并携带本标签就医。皮肤接触用清水和肥皂冲洗；眼睛溅入用流动清水冲洗至少15分钟；吸入时转移到空气流通处；误食时立即漱口，不得自行引吐。无专用解毒剂，对症治疗。</p></section>
+    <section class="ref-storage"><h3>储存和运输方法</h3><p>加锁存放于阴凉、干燥、通风、防雨处，远离火源和热源。置于儿童及动物接触不到之处，不得与食品、饮料、粮食、种子和饲料混合储运。</p></section>
+    <section class="ref-records"><h3>登记和生产信息</h3><p><b>实验虚构登记号：</b>EXP-PD-B0823　<b>产品标准号：</b>LAB/FIC-B-2026　<b>生产许可证号：</b>EXP-XK-B0823<br><b>净含量：</b>200毫升　<b>生产日期及批号：</b>见封口　<b>质量保证期：</b>2年　<b>生产者：</b>原野标签研究实验室（虚构机构）</p></section>
+    <div class="ref-pictograms"><span>穿防护服</span><span>佩戴口罩</span><span>戴护目镜</span><span>佩戴手套</span><span>施药后清洗</span><span>远离儿童</span><span>勿污染水体</span></div>
+    <div class="ref-study-note">实验用虚构农药标签　所有产品、成分、登记信息及使用数据均为虚构　禁止用于真实农业生产</div>
+    <footer class="category-band">杀 菌 剂</footer>
   </article>
 </body>
 </html>
